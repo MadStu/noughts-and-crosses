@@ -1,0 +1,22 @@
+body {
+    margin:0px;
+}
+
+div {
+    margin: 0;
+}
+
+#game-container {
+    max-width: 750px;
+}
+
+.game-square {
+    width: 250px;
+    height: 250px;
+    background-color: blue;
+    float: left;
+}
+
+#square-2, #square-4, #square-6, #square-8 {
+    background-color: green;
+} 
