@@ -54,8 +54,11 @@ function checkWinner(OX) {
     while (i < winNumsArray.length) {
         if (winNumsArray[i].every((val) => squareArray.includes(val))) {
             //Winner!
-            setScoreboard(OX);
-            setTimeout(() => {alert("WE HAVE A WINNER! Click to reset!")}, 1000);
+
+            //Increments the scoreboard
+            setScoreboard(true, OX);
+            setTimeout(() => {alert("WE HAVE A WINNER! Click to reset!")}, 100);
+            console.log("RESET");
             resetSquares();
             break;
         }
@@ -66,8 +69,12 @@ function checkWinner(OX) {
 /**
  * Change score if someone wins or draws
  */
-function setScoreboard() {
-    
+function setScoreboard(win, OX) {
+    if (win) {
+        (OX === "O") ? document.getElementById("human-score").innerHTML++ : document.getElementById("computer-score").innerHTML++ ;
+    } else {
+        document.getElementById("draw-score").innerHTML++;
+    }
 }
 
 /**
