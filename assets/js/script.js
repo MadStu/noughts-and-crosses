@@ -1,16 +1,20 @@
+//Set global variable winner to a default falsey state
 var winner = false;
 
 /**
  * Receive click id and start the game turn 
  */
 function playerClick(square){
+
     //Check if player's turn
     if (document.getElementById("game-turn").innerHTML === "Your"){
+
         //Check if square is taken
         if (squareFree(square)) {
-            //Add square number to userSquares array and set the square in the game
-            //userSquares.push(square);
+
+            //Set the square in the game
             setSquare(`${square}`,"O");
+
         } else {
             //Square already taken
             alert("Square already taken!");
@@ -66,6 +70,7 @@ function checkWinner(OX) {
         //Increments the scoreboard
         setScoreboard(true, OX);
 
+        // Declares the winner! And resets the game
         setTimeout(() => {alert("WE HAVE A WINNER! Game will reset :D")}, 100);
         setTimeout(() => {resetSquares()}, 2000);
 
@@ -77,8 +82,10 @@ function checkWinner(OX) {
  */
 function setScoreboard(win, OX) {
     if (win) {
+        //Change the score based on who is the active player
         (OX === "O") ? document.getElementById("human-score").innerHTML++ : document.getElementById("computer-score").innerHTML++ ;
     } else {
+        //Increments the draw-score if nobody won
         document.getElementById("draw-score").innerHTML++;
     }
 }
@@ -88,7 +95,7 @@ function setScoreboard(win, OX) {
  * Tell computer to take a turn
  */
 function changePlayer(OX) {
-    //Check if we've won before changing player
+    //Check if there's a winner before changing player
     checkWinner(OX); 
 
     if (OX === "O"){
@@ -138,8 +145,12 @@ function changePlayer(OX) {
  */
 function resetSquares() {
     for (let i = 1; i <= 9; i++) {
+        //Resets who's turn it is
         document.getElementById("game-turn").innerHTML = "Your";
+
+        //Resets all game squares to empty
         document.getElementById(`square-${i}`).innerHTML = '';
     }
+    //Changes global variable back to false
     winner = false;
 }
