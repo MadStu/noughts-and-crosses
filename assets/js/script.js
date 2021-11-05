@@ -31,7 +31,6 @@ function squareFree(square) {
  */
 function setSquare(square, OX) {
     document.getElementById(`square-${square}`).innerHTML = `${OX}`;
-    checkWinner(OX);
     changePlayer(OX); // Change the active player
 }
 
@@ -55,11 +54,10 @@ function checkWinner(OX) {
     while (i < winNumsArray.length) {
         if (winNumsArray[i].every((val) => squareArray.includes(val))) {
             //Winner!
-            alert("WE HAVE A WINNER!");
-            console.log("Winner!");
+            setScoreboard(OX);
+            setTimeout(() => {alert("WE HAVE A WINNER! Click to reset!")}, 1000);
+            resetSquares();
             break;
-        } else {
-            console.log("No winner yet :(");
         }
         i++;
     }
@@ -77,6 +75,9 @@ function setScoreboard() {
  * Tell computer to take a turn
  */
 function changePlayer(OX) {
+    //Check if we've won before changing player
+    checkWinner(OX); 
+
     if (OX === "O"){
         document.getElementById("game-turn").innerHTML = "Computer's";
         computerTurn(); // Tell computer to take it's turn
@@ -105,10 +106,17 @@ function changePlayer(OX) {
         //Choose square at random
         square = Math.floor(Math.random() * squareArray.length);
 
-        //Wait 1.5 seconds then add X to the square
-        setTimeout(() => {setSquare(squareArray[square], "X")}, 1500);
+        //Wait 1 second then add X to the square
+        setTimeout(() => {setSquare(squareArray[square], "X")}, 1000);
 
     } else {
         console.log("Error, It's not the computer's turn?");
     }
+}
+
+/**
+ * Resets the game to play again
+ */
+function resetSquares() {
+
 }
