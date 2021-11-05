@@ -1,4 +1,3 @@
-
 /**
  * Receive click id and start the game turn 
  */
@@ -64,6 +63,7 @@ function checkWinner(OX) {
         i++;
     }
 }
+
 /**
  * Change score if someone wins or draws
  */
@@ -89,5 +89,10 @@ function changePlayer(OX) {
  * short delay to simulate the computer thinking
  */
  function computerTurn() {
-    
+    //Double check it's computer's turn
+    if (document.getElementById("game-turn").innerHTML === "Computer's";) {
+        //Find a free square
+    } else {
+        console.log("Error, It's not the computer's turn?");
+    }
 }
