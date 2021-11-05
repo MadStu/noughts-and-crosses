@@ -57,9 +57,8 @@ function checkWinner(OX) {
 
             //Increments the scoreboard
             setScoreboard(true, OX);
-            setTimeout(() => {alert("WE HAVE A WINNER! Click to reset!")}, 100);
-            console.log("RESET");
-            resetSquares();
+            setTimeout(() => {alert("WE HAVE A WINNER! Game will reset :D")}, 100);
+            setTimeout(() => {resetSquares()}, 3000);
             break;
         }
         i++;
@@ -125,5 +124,8 @@ function changePlayer(OX) {
  * Resets the game to play again
  */
 function resetSquares() {
-
+    for (let i = 1; i <= 9; i++) {
+        document.getElementById("game-turn").innerHTML = "Your";
+        document.getElementById(`square-${i}`).innerHTML = '';
+    }
 }
