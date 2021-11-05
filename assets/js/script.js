@@ -61,7 +61,9 @@ function checkWinner(OX) {
     //Loop through the winning squares to check against player squares
     let i = 0;
     while (i < winNumsArray.length) {
+
         if (winNumsArray[i].every((val) => squareArray.includes(val))) {
+            
             //Winner!
             winner = true;
             break;
@@ -70,13 +72,13 @@ function checkWinner(OX) {
     }
 
     if (winner){
+
         //Increments the scoreboard
         setScoreboard(true, OX);
 
         // Declares the winner! And resets the game
         setTimeout(() => {alert("WE HAVE A WINNER! Game will reset :D")}, 100);
         setTimeout(() => {resetSquares()}, 2000);
-
     }
 }
 
@@ -85,9 +87,11 @@ function checkWinner(OX) {
  */
 function setScoreboard(win, OX) {
     if (win) {
+
         //Change the score based on who is the active player
         (OX === "O") ? document.getElementById("human-score").innerHTML++ : document.getElementById("computer-score").innerHTML++ ;
     } else {
+
         //Increments the draw-score if nobody won
         document.getElementById("draw-score").innerHTML++;
     }
@@ -102,9 +106,11 @@ function changePlayer(OX) {
     checkWinner(OX); 
 
     if (OX === "O"){
+
         document.getElementById("game-turn").innerHTML = "Computer's";
         computerTurn();
     } else {
+
         document.getElementById("game-turn").innerHTML = "Your";
     }
 }
@@ -114,6 +120,7 @@ function changePlayer(OX) {
  * short delay to simulate the computer thinking
  */
  function computerTurn() {
+
     //Double check it's computer's turn
     if (document.getElementById("game-turn").innerHTML === "Computer's") {
         //Find a free square
@@ -130,10 +137,13 @@ function changePlayer(OX) {
         let randomSquare = Math.floor(Math.random() * squareArray.length);
 
         if (squareArray.length < 1 && !winner) {
+
+            //Alert if no winner, reset game and increment draw-score
             setTimeout(() => {alert("No winner this time :( Game will reset.")}, 100);
             setTimeout(() => {resetSquares()}, 2000);
             setScoreboard(false);
         } else {
+
             //Wait 1 second then add X to the square
             setTimeout(() => {setSquare(squareArray[randomSquare], "X")}, 1000);
         }
@@ -148,6 +158,7 @@ function changePlayer(OX) {
  */
 function resetSquares() {
     for (let i = 1; i <= 9; i++) {
+
         //Resets who's turn it is
         document.getElementById("game-turn").innerHTML = "Your";
 
