@@ -1,21 +1,37 @@
+let userSquares = [];
+let computerSquares = [];
 
 /**
  * Receive click id and start the game turn 
  */
 function playerClick(square){
-    let gameTurn = document.getElementById("game-turn").innerHTML;
-    if (gameTurn === "Your"){
-        setSquare(`${square}`,"O");
+    //Check if player's turn
+    if (document.getElementById("game-turn").innerHTML === "Your"){
+        //Check if square is taken
+        if (squareFree(square)) {
+            setSquare(`${square}`,"O");
+        } else {
+            //Square already taken
+            alert("Square already taken!");
+        }
     } else {
+        //It's not the player's turn!
         alert("Wait your turn!");
     }
+}
+
+/**
+ * Check if square is free
+ */
+function squareFree(square) {
+    return ;
 }
 
 /**
  * Add the O or X to the game board
  */
 function setSquare(square, OX) {
-    document.getElementById(`${square}`).innerHTML = `${OX}`;
+    document.getElementById(`square-${square}`).innerHTML = `${OX}`;
     changePlayer(OX); // Change the active player
 }
 
