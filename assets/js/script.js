@@ -49,7 +49,7 @@ function checkWinner(OX) {
     for (let i = 1; i <= 9; i++) {
         (document.getElementById(`square-${i}`).innerHTML === OX) ? squareArray.push(i) : '' ;
     }
-    
+
     //Loop through the winning squares to check against player squares
     let i = 0;
     while (i < winNumsArray.length) {
@@ -63,7 +63,7 @@ function checkWinner(OX) {
         }
         i++;
     }
-
+}
 /**
  * Change score if someone wins or draws
  */
@@ -88,6 +88,6 @@ function changePlayer(OX) {
  * Find a free square to place Computer's X in
  * short delay to simulate the computer thinking
  */
-function computerTurn() {
+ function computerTurn() {
     
 }
