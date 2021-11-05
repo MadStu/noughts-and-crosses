@@ -31,6 +31,7 @@ function squareFree(square) {
  */
 function setSquare(square, OX) {
     document.getElementById(`square-${square}`).innerHTML = `${OX}`;
+    checkWinner(OX);
     changePlayer(OX); // Change the active player
 }
 
@@ -90,8 +91,23 @@ function changePlayer(OX) {
  */
  function computerTurn() {
     //Double check it's computer's turn
-    if (document.getElementById("game-turn").innerHTML === "Computer's";) {
+    if (document.getElementById("game-turn").innerHTML === "Computer's") {
         //Find a free square
+
+        //Declare array for squares
+        let squareArray = [];
+
+        //Squares with active O or X will not be added to the array
+        for (let i = 1; i <= 9; i++) {
+            (document.getElementById(`square-${i}`).innerHTML === '') ? squareArray.push(i) : '' ;
+        }
+
+        //Choose square at random
+        square = Math.floor(Math.random() * squareArray.length);
+
+        //Wait 1.5 seconds then add X to the square
+        setTimeout(() => {setSquare(squareArray[square], "X")}, 1500);
+
     } else {
         console.log("Error, It's not the computer's turn?");
     }
