@@ -37,20 +37,23 @@ function squareFree(square) {
  */
 function setSquare(square, OX) {
     document.getElementById(`square-${square}`).innerHTML = `${OX}`;
-    changePlayer(OX); // Change the active player
+
+    // Change the active player
+    changePlayer(OX); 
 }
 
 /**
  * Check if there's 3 lines or if all squares are filled
  */
 function checkWinner(OX) {
+
     //Winning Squares are:
     let winNumsArray = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 
     //Declare array for player's squares
     let squareArray = [];
 
-    //Squares with active O or X will be added to the array
+    //Squares with active O or X will be added to player's squares array
     for (let i = 1; i <= 9; i++) {
         (document.getElementById(`square-${i}`).innerHTML === OX) ? squareArray.push(i) : '' ;
     }
@@ -124,7 +127,7 @@ function changePlayer(OX) {
         }
 
         //Choose square at random
-        square = Math.floor(Math.random() * squareArray.length);
+        let randomSquare = Math.floor(Math.random() * squareArray.length);
 
         if (squareArray.length < 1 && !winner) {
             setTimeout(() => {alert("No winner this time :( Game will reset.")}, 100);
@@ -132,7 +135,7 @@ function changePlayer(OX) {
             setScoreboard(false);
         } else {
             //Wait 1 second then add X to the square
-            setTimeout(() => {setSquare(squareArray[square], "X")}, 1000);
+            setTimeout(() => {setSquare(squareArray[randomSquare], "X")}, 1000);
         }
 
     } else {
