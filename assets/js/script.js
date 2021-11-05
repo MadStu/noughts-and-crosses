@@ -1,5 +1,3 @@
-let userSquares = [];
-let computerSquares = [];
 
 /**
  * Receive click id and start the game turn 
@@ -42,15 +40,6 @@ function setSquare(square, OX) {
  */
 function checkWinner(OX) {
     //Winning Squares are:
-    let winNums1 = [1,2,3];
-    let winNums2 = [4,5,6];
-    let winNums3 = [7,8,9];
-    let winNums4 = [1,4,7];
-    let winNums5 = [2,5,8];
-    let winNums6 = [3,6,9];
-    let winNums7 = [1,5,9];
-    let winNums8 = [3,5,7];
-
     let winNumsArray = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 
     //Declare array for player's squares
@@ -60,13 +49,13 @@ function checkWinner(OX) {
     for (let i = 1; i <= 9; i++) {
         (document.getElementById(`square-${i}`).innerHTML === OX) ? squareArray.push(i) : '' ;
     }
-    //Check the array for winning squares
-    let success = winNums2.every((val) => squareArray.includes(val))
-
+    
+    //Loop through the winning squares to check against player squares
     let i = 0;
     while (i < winNumsArray.length) {
         if (winNumsArray[i].every((val) => squareArray.includes(val))) {
             //Winner!
+            alert("WE HAVE A WINNER!");
             console.log("Winner!");
             break;
         } else {
