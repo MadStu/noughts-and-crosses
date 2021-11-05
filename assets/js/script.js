@@ -9,6 +9,8 @@ function playerClick(square){
     if (document.getElementById("game-turn").innerHTML === "Your"){
         //Check if square is taken
         if (squareFree(square)) {
+            //Add square number to userSquares array and set the square in the game
+            userSquares.push(square);
             setSquare(`${square}`,"O");
         } else {
             //Square already taken
