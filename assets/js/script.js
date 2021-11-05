@@ -51,17 +51,29 @@ function checkWinner(OX) {
 
     //Loop through the winning squares to check against player squares
     let i = 0;
+    let winner = false;
+
     while (i < winNumsArray.length) {
         if (winNumsArray[i].every((val) => squareArray.includes(val))) {
             //Winner!
-
-            //Increments the scoreboard
-            setScoreboard(true, OX);
-            setTimeout(() => {alert("WE HAVE A WINNER! Game will reset :D")}, 100);
-            setTimeout(() => {resetSquares()}, 3000);
+            winner = true;
             break;
         }
         i++;
+    }
+
+    if (winner){
+        //Increments the scoreboard
+        setScoreboard(true, OX);
+
+        setTimeout(() => {alert("WE HAVE A WINNER! Game will reset :D")}, 100);
+        setTimeout(() => {resetSquares()}, 2000);
+
+    } else if (winNumsArray.length < 1) {
+        setTimeout(() => {alert("No winner this time :( Game will reset.")}, 100);
+        setTimeout(() => {resetSquares()}, 2000);
+    } else {
+        (XO === "O") ? computerTurn() : '' ;
     }
 }
 
@@ -86,7 +98,7 @@ function changePlayer(OX) {
 
     if (OX === "O"){
         document.getElementById("game-turn").innerHTML = "Computer's";
-        computerTurn(); // Tell computer to take it's turn
+        
     } else {
         document.getElementById("game-turn").innerHTML = "Your";
     }
