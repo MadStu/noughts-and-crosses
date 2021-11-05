@@ -24,7 +24,7 @@ function playerClick(square){
  * Check if square is free
  */
 function squareFree(square) {
-    return ;
+    return (document.getElementById(`square-${square}`).innerHTML === '') ? true : false ;
 }
 
 /**
