@@ -1,9 +1,14 @@
+document.getElementById("square-1").addEventListener("click", function() {
+    if (document.getElementById("game-turn").innerHTML === "Your"){
+        setSquare("1","O");
+    }
+});
 
 /**
  * Add the X or O to the game board
  */
-function setSquare() {
-
+function setSquare(square, OX) {
+    document.getElementById(`square-${square}`).innerHTML = `${OX}`;
 }
 
 /**
