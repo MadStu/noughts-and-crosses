@@ -1,14 +1,22 @@
-document.getElementById("square-1").addEventListener("click", function() {
-    if (document.getElementById("game-turn").innerHTML === "Your"){
-        setSquare("1","O");
-    }
-});
 
 /**
- * Add the X or O to the game board
+ * Receive click id and start the game turn 
+ */
+function playerClick(square){
+    let gameTurn = document.getElementById("game-turn").innerHTML;
+    if (gameTurn === "Your"){
+        setSquare(`${square}`,"O");
+    } else {
+        alert("Wait your turn!");
+    }
+}
+
+/**
+ * Add the O or X to the game board
  */
 function setSquare(square, OX) {
-    document.getElementById(`square-${square}`).innerHTML = `${OX}`;
+    document.getElementById(`${square}`).innerHTML = `${OX}`;
+    changePlayer(OX); // Change the active player
 }
 
 /**
@@ -26,14 +34,21 @@ function setScoreboard() {
 }
 
 /**
- * Show who's turn it is, short delay to simulate the computer thinking
+ * Show who's turn it is
+ * Tell computer to take a turn
  */
-function changePlayer() {
-    
+function changePlayer(OX) {
+    if (OX === "O"){
+        document.getElementById("game-turn").innerHTML = "Computer's";
+        computerTurn(); // Tell computer to take it's turn
+    } else {
+        document.getElementById("game-turn").innerHTML = "Your";
+    }
 }
 
 /**
  * Find a free square to place Computer's X in
+ * short delay to simulate the computer thinking
  */
 function computerTurn() {
     
