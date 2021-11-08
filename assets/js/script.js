@@ -148,11 +148,11 @@ function changePlayer(OX) {
         if (hardMode){
 
             //Choose square based on existing O squares
-
+            let chosenSquare = computerSquareHard(squareArray);
         } else {
 
             //Choose square at random
-            let chosenSquare = Math.floor(Math.random() * squareArray.length);
+            let chosenSquare = computerSquareEasy(squareArray);
         }
 
         if (squareArray.length < 1 && !winner) {
@@ -184,4 +184,19 @@ function resetSquares() {
         //Resets all game squares to empty
         document.getElementById(`square-${i}`).innerHTML = '';
     }
+}
+
+/**
+ * Chooses a square based on logic
+ */
+function computerSquareHard(squareArray){
+
+}
+
+/**
+ * Chooses a square randomly
+ */
+ function computerSquareEasy(squareArray){
+    //Choose square at random
+    return Math.floor(Math.random() * squareArray.length);
 }
