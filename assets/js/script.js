@@ -82,12 +82,14 @@ function checkWinner(OX) {
         setScoreboard(true, OX);
 
         // Declares the winner! And resets the game
-        setTimeout(() => {alert("WE HAVE A WINNER! Game will reset :D")}, 100);
-        setTimeout(() => {resetSquares()}, 2000);
+        (OX === "O") ? setTimeout(() => {alert("YOU WON! Game will reset :D")}, 100) : setTimeout(() => {alert("YOU LOST! Game will reset. Try again.")}, 100) ;
 
-        //Changes global variable back to false
+        setTimeout(() => {resetSquares()}, 1500);
+
+        //Changes global winner variable back to false
         winner = false;
     } else if (OX === "O"){
+
         //If no winner and it's the computer's turn
         computerTurn();
     }
@@ -283,14 +285,21 @@ function computerSquareHard(squareArray){
     return squareArray[Math.floor(Math.random() * squareArray.length)];
 }
 
+//Check page is loaded
 window.addEventListener('load', function () {
-    let boardButtons = this.document.querySelectorAll('.game-square');
-    boardButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            const selectedButton = this.getAttribute('data-button-number');
-            playerClick(selectedButton);
+
+    //Define
+    let boardSquares = this.document.querySelectorAll('.game-square');
+    boardSquares.forEach(function(clicked) {
+
+        //Add the event listener
+        clicked.addEventListener("click", function() {
+
+            //Get the square number
+            const selectedSquare = this.getAttribute('data-square-number');
+
+            //Start the game loop
+            playerClick(selectedSquare);
         });
     });
-    
-    
 });
