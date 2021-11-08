@@ -285,6 +285,15 @@ function computerSquareHard(squareArray){
     return squareArray[Math.floor(Math.random() * squareArray.length)];
 }
 
+/**
+ * Resets player scores when they toggle hard mode
+ */
+function resetScores(){
+    document.getElementById("draw-score").innerHTML = 0;
+    document.getElementById("human-score").innerHTML = 0;
+    document.getElementById("computer-score").innerHTML = 0;
+}
+
 //Check page is loaded
 window.addEventListener('load', function () {
 
@@ -299,9 +308,11 @@ window.addEventListener('load', function () {
             if (document.getElementById("hard-mode").innerHTML === "ON"){
                 hardMode = false;
                 document.getElementById("hard-mode").innerHTML = "Off";
+                resetScores();
             } else {
                 hardMode = true;
                 document.getElementById("hard-mode").innerHTML = "ON";
+                resetScores();
             }
         });
     });
