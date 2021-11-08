@@ -292,6 +292,9 @@ function resetScores(){
     document.getElementById("draw-score").innerHTML = 0;
     document.getElementById("human-score").innerHTML = 0;
     document.getElementById("computer-score").innerHTML = 0;
+
+    //Reset the board
+    resetSquares();
 }
 
 //Check page is loaded
@@ -304,7 +307,7 @@ window.addEventListener('load', function () {
         //Add the event listener
         clicked.addEventListener("click", function() {
 
-            //Check current mode and switch it around
+            //Check current mode, switch it around and reset scores
             if (document.getElementById("hard-mode").innerHTML === "ON"){
                 hardMode = false;
                 document.getElementById("hard-mode").innerHTML = "Off";
