@@ -1,5 +1,5 @@
 //Set global variable winner to a default falsey state
-var winner = false;
+let winner = false;
 
 /**
  * Receive click id and start the game turn 
@@ -79,6 +79,9 @@ function checkWinner(OX) {
         // Declares the winner! And resets the game
         setTimeout(() => {alert("WE HAVE A WINNER! Game will reset :D")}, 100);
         setTimeout(() => {resetSquares()}, 2000);
+
+        //Changes global variable back to false
+        winner = false;
     }
 }
 
@@ -165,6 +168,4 @@ function resetSquares() {
         //Resets all game squares to empty
         document.getElementById(`square-${i}`).innerHTML = '';
     }
-    //Changes global variable back to false
-    winner = false;
 }
