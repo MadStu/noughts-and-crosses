@@ -88,7 +88,7 @@ function checkWinner(OX) {
             winnerAnimation();
 
             //Winner message!
-            modalBox("WINNER :D");
+            modalBox("WINNER!");
 
         } else {
 
@@ -96,7 +96,7 @@ function checkWinner(OX) {
             loserAnimation();
 
             //Loser message
-            modalBox("Loser :(");
+            modalBox("Loser");
         }
 
         setTimeout(() => {resetSquares()}, 1500);
@@ -172,7 +172,7 @@ function changePlayer(OX) {
             drawAnimation();
 
             //Draw message
-            modalBox("Draw :/");
+            modalBox("Draw");
 
         } else {
 
@@ -430,7 +430,7 @@ function modalBox(message){
     modal.style.display = "block";
 
     //Close the modal after 1 second
-    setTimeout(() => {modal.style.display = "none"}, 1000);
+    setTimeout(() => {modal.style.display = "none"}, 1500);
 
 
     //When the user clicks on <span> (x), close the modal
