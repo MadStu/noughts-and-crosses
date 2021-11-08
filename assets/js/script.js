@@ -86,10 +86,17 @@ function checkWinner(OX) {
 
             //Show some winning colours!
             winnerAnimation();
+
+            //Winner message!
+            modalBox("WINNER :D");
+
         } else {
 
             //Show the losing colour
             loserAnimation();
+
+            //Loser message
+            modalBox("Loser :(");
         }
 
         setTimeout(() => {resetSquares()}, 1500);
@@ -163,6 +170,9 @@ function changePlayer(OX) {
 
             //Show draw colour
             drawAnimation();
+
+            //Draw message
+            modalBox("Draw :/");
 
         } else {
 
@@ -394,14 +404,44 @@ function winnerAnimation(){
     let i = 0;
 
     function change() {
-        // If we have run out of colors, stop the timer
+        //If we have run out of colors, stop the timer
         if(i >= colours.length){ clearInterval(timer); }
         
-        // Set the color and increment the index
+        //Set the color and increment the index
         document.body.style.backgroundColor = colours[i++];
     }
 
-    // Start the timer but get a reference to it 
-    // so we can stop it later
+    //Start the timer but get a reference to it so we can stop it later
     const timer = setInterval(change, 70); 
+}
+
+function modalBox(message){
+
+    //Chage the modal text content
+    document.getElementById("modal-text").innerHTML = message;
+
+    //Get the modal
+    var modal = document.getElementById("myModal");
+
+    //Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    //Open the modal 
+    modal.style.display = "block";
+
+    //Close the modal after 1 second
+    setTimeout(() => {modal.style.display = "none"}, 1000);
+
+
+    //When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    //When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 }
