@@ -288,7 +288,25 @@ function computerSquareHard(squareArray){
 //Check page is loaded
 window.addEventListener('load', function () {
 
-    //Define
+    //Define modeSwitch and listen for click event
+    let modeSwitch = this.document.querySelectorAll('#hard-mode');
+    modeSwitch.forEach(function(clicked) {
+
+        //Add the event listener
+        clicked.addEventListener("click", function() {
+
+            //Check current mode and switch it around
+            if (document.getElementById("hard-mode").innerHTML === "ON"){
+                hardMode = false;
+                document.getElementById("hard-mode").innerHTML = "Off";
+            } else {
+                hardMode = true;
+                document.getElementById("hard-mode").innerHTML = "ON";
+            }
+        });
+    });
+
+    //Define boardSquares and listen for click event
     let boardSquares = this.document.querySelectorAll('.game-square');
     boardSquares.forEach(function(clicked) {
 
