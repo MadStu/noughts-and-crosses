@@ -5,10 +5,21 @@
 
 body {
     margin:0px;
+    background-color: darkslategray;
+    color: floralwhite;
+}
+
+h1 {
+    font-size: 50px;
 }
 
 h1, h2, h3, p {
     text-align: center;
+    font-family: edo, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3, p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .center {
@@ -16,9 +27,22 @@ h1, h2, h3, p {
     max-width: 600px;
 }
 
+.head-box {
+    width: 300px;
+    height: 50px;
+    float: left;
+    text-transform: uppercase;
+}
+
+#hard-mode {
+    font-family: edo, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
 #game-container {
-    max-width: 600px;
+    border-radius: 25px;
     background: url("../images/noughts-and-crosses-background.png");
+    background-color: whitesmoke;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -31,9 +55,8 @@ h1, h2, h3, p {
     height: 200px;
     float: left;
     font-size: 180px;
-    font-family: edo;
+    font-family: edo, Verdana, Geneva, Tahoma, sans-serif;
     color: #202020;
     text-align: center;
     margin: auto;
 }
-

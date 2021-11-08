@@ -138,3 +138,4 @@ The live link can be found here - https://madstu.github.io/noughts-and-crosses/
 - The social media icons were downloaded from https://iconmonstr.com/
 - The responsive mockup image at the top of the README.md was created at https://websitemockupgenerator.com/
 https://www.photopea.com/
+https://www.1001freefonts.com/edo.font

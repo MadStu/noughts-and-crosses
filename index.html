@@ -9,15 +9,24 @@
     <title>Noughts and Crosses</title>
 </head>
 <body>
-    <header>
+    <header class="center">
         <h1>Noughts and Crosses</h1>
-        <p>The game everybody knows. You are O and the computer is X. The first to get 3 in a line is the winner!</p>
+        <p>The game everybody loves! You are O and the computer is X.
+            <br>The first to get 3 in a line is the winner!</p>
     </header>
 
-    <main>
+    <main class="center">
         <div class="center">
-            <h3><span id="game-turn">Your</span> turn<br>
-                Hard mode is: <span id="hard-mode">ON</span></h3>
+            
+            
+            <div class="center" id="head-container">
+                <div class="head-box">
+                    <h3><span id="game-turn">Your</span> turn</h3>
+                </div>
+                <div class="head-box">
+                    <h3>Hard mode is: <span id="hard-mode">ON</span></h3>
+                </div>
+            </div>
 
             <div class="center" id="game-container">
                 <div class="game-square" id="square-1" data-square-number="1"></div>
