@@ -187,21 +187,6 @@ function computerSquareHard(squareArray){
     //Check if 2 or more squares are available, else computerSquareEasy(squareArray)
     if (squareArray.length > 1){
 
-        //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //Elegible Squares are:
         let eligibleNumsArray = [[1,2],[2,3],[1,3],[4,5],[5,6],[4,6],
                                  [7,8],[8,9],[7,9],[1,4],[4,7],[1,7],
@@ -216,14 +201,14 @@ function computerSquareHard(squareArray){
             (document.getElementById(`square-${i}`).innerHTML === "O") ? playerArray.push(i) : '' ;
         }
 
+        //Declare the variable to return
+        let cSquare = computerSquareEasy(squareArray);
+
         //Loop through the winning squares to check against player squares
-        //let i = 0;
-        //while (i < eligibleNumsArray.length) {
         for (let i = 0; i < eligibleNumsArray.length; i++) {
 
-            console.log(i);
-
-            if (eligibleNumsArray.every((val) => playerArray.includes(val))) {
+            //Checks if player squares match with elegible squares
+            if (eligibleNumsArray[i].every((val) => playerArray.includes(val))) {
                 
 
                 console.log(eligibleNumsArray[i].toString());
@@ -232,7 +217,7 @@ function computerSquareHard(squareArray){
 
                 if (arrStr === "1,2" && document.getElementById("square-3").innerHTML === ""){
                     console.log("Putting X in square 3");
-                    return 3;
+                    cSquare = 3;
                 } else if (arrStr === "2,3" && document.getElementById("square-1").innerHTML === ""){
                     console.log("Putting X in square 1")
                 } else if (arrStr === "1,3" && document.getElementById("square-2").innerHTML === ""){
@@ -279,22 +264,12 @@ function computerSquareHard(squareArray){
                     console.log("Putting X in square 3")
                 } else if (arrStr === "3,7" && document.getElementById("square-5").innerHTML === ""){
                     console.log("Putting X in square 5")
-                } else {
-                    return computerSquareEasy(squareArray);
                 }
-
-                
-
-            } else {
-                return computerSquareEasy(squareArray);
             }
-            
-           // i++; 
         }
-        
 
-
-
+        //Return the square
+        return cSquare;
     } else {
 
         //Less than 2 squares left so just do the easy logic

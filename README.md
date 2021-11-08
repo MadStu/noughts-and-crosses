@@ -107,7 +107,8 @@ There was a bug where if the screen became too narrow, the header image would re
 
 - ~~When the human player has won a game and there's still free spaces available, the computer takes a turn and records itself as having won before resetting the board.~~
 - ~~When the human player has won a game and there's still free spaces available, the computer takes another turn before resetting the board.~~
-- The computerSquareHard() function doesn't loop through the eligibleNumsArray.
+- ~~The computerSquareHard() function does not loop through the eligibleNumsArray.~~
+- The number returned is the square number but is interpreted as the array index number.
 
 ## Deployment
 
