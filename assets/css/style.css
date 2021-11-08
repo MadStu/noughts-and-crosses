@@ -15,20 +15,20 @@ h1, h2, h3, p {
 
 #game-container {
     max-width: 600px;
+    background: url("../images/noughts-and-crosses-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    overflow: hidden;
 }
 
 .game-square {
     width: 200px;
     height: 200px;
-    background-color: blue;
     float: left;
-    font-family: 'Fruktur', cursive;
-    color: white;
     font-size: 150px;
     text-align: center;
     margin: auto;
 }
 
-#square-2, #square-4, #square-6, #square-8 {
-    background-color: green;
-} 
