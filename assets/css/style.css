@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
+@font-face {
+    font-family: edo;
+    src: url(../fonts/edo.ttf);
+  }
 
 body {
     margin:0px;
@@ -28,6 +31,8 @@ h1, h2, h3, p {
     height: 200px;
     float: left;
     font-size: 150px;
+    font-family: edo;
+    color: rgb(14, 14, 14);
     text-align: center;
     margin: auto;
 }
