@@ -217,33 +217,81 @@ function computerSquareHard(squareArray){
         }
 
         //Loop through the winning squares to check against player squares
-        let i = 0;
-        while (i < eligibleNumsArray.length) {
+        //let i = 0;
+        //while (i < eligibleNumsArray.length) {
+        for (let i = 0; i < eligibleNumsArray.length; i++) {
 
-            if (eligibleNumsArray[i].every((val) => playerArray.includes(val)) && ) {
+            console.log(i);
+
+            if (eligibleNumsArray.every((val) => playerArray.includes(val))) {
                 
-                //Match!
-                console.log(eligibleNumsArray[i]);
-                break;
+
+                console.log(eligibleNumsArray[i].toString());
+
+                let arrStr = eligibleNumsArray[i].toString();
+
+                if (arrStr === "1,2" && document.getElementById("square-3").innerHTML === ""){
+                    console.log("Putting X in square 3");
+                    return 3;
+                } else if (arrStr === "2,3" && document.getElementById("square-1").innerHTML === ""){
+                    console.log("Putting X in square 1")
+                } else if (arrStr === "1,3" && document.getElementById("square-2").innerHTML === ""){
+                    console.log("Putting X in square 2")
+                } else if (arrStr === "4,5" && document.getElementById("square-6").innerHTML === ""){
+                    console.log("Putting X in square 6")
+                } else if (arrStr === "5,6" && document.getElementById("square-4").innerHTML === ""){
+                    console.log("Putting X in square 4")
+                } else if (arrStr === "4,6" && document.getElementById("square-5").innerHTML === ""){
+                    console.log("Putting X in square 5")
+                } else if (arrStr === "7,8" && document.getElementById("square-9").innerHTML === ""){
+                    console.log("Putting X in square 9")
+                } else if (arrStr === "8,9" && document.getElementById("square-7").innerHTML === ""){
+                    console.log("Putting X in square 7")
+                } else if (arrStr === "7,9" && document.getElementById("square-8").innerHTML === ""){
+                    console.log("Putting X in square 8")
+                } else if (arrStr === "1,4" && document.getElementById("square-7").innerHTML === ""){
+                    console.log("Putting X in square 7")
+                } else if (arrStr === "4,7" && document.getElementById("square-1").innerHTML === ""){
+                    console.log("Putting X in square 1")
+                } else if (arrStr === "1,7" && document.getElementById("square-4").innerHTML === ""){
+                    console.log("Putting X in square 4")
+                } else if (arrStr === "2,5" && document.getElementById("square-8").innerHTML === ""){
+                    console.log("Putting X in square 8")
+                } else if (arrStr === "5,8" && document.getElementById("square-2").innerHTML === ""){
+                    console.log("Putting X in square 2")
+                } else if (arrStr === "2,8" && document.getElementById("square-5").innerHTML === ""){
+                    console.log("Putting X in square 5")
+                } else if (arrStr === "3,6" && document.getElementById("square-9").innerHTML === ""){
+                    console.log("Putting X in square 9")
+                } else if (arrStr === "6,9" && document.getElementById("square-3").innerHTML === ""){
+                    console.log("Putting X in square 3")
+                } else if (arrStr === "3,9" && document.getElementById("square-6").innerHTML === ""){
+                    console.log("Putting X in square 1")
+                } else if (arrStr === "1,5" && document.getElementById("square-9").innerHTML === ""){
+                    console.log("Putting X in square 9")
+                } else if (arrStr === "5,9" && document.getElementById("square-1").innerHTML === ""){
+                    console.log("Putting X in square 1")
+                } else if (arrStr === "1,9" && document.getElementById("square-5").innerHTML === ""){
+                    console.log("Putting X in square 1")
+                } else if (arrStr === "3,5" && document.getElementById("square-7").innerHTML === ""){
+                    console.log("Putting X in square 7")
+                } else if (arrStr === "5,7" && document.getElementById("square-3").innerHTML === ""){
+                    console.log("Putting X in square 3")
+                } else if (arrStr === "3,7" && document.getElementById("square-5").innerHTML === ""){
+                    console.log("Putting X in square 5")
+                } else {
+                    return computerSquareEasy(squareArray);
+                }
+
+                
+
+            } else {
+                return computerSquareEasy(squareArray);
             }
-            i++;
+            
+           // i++; 
         }
-
-
-        return computerSquareEasy(squareArray);
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
 
 
