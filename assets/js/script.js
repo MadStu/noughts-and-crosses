@@ -1,6 +1,11 @@
 //Set global variable winner to a default falsey state
 let winner = false;
 
+//Set global variable hardMode to a default truthy state
+//hardMode gives the user a more challenging game
+//If hardMode is false the computer chooses a free square at random
+let hardMode = true;
+
 /**
  * Receive click id and start the game turn 
  */
@@ -139,8 +144,16 @@ function changePlayer(OX) {
             (document.getElementById(`square-${i}`).innerHTML === '') ? squareArray.push(i) : '' ;
         }
 
-        //Choose square at random
-        let randomSquare = Math.floor(Math.random() * squareArray.length);
+        //Check if hardMode is activated
+        if (hardMode){
+
+            //Choose square based on existing O squares
+
+        } else {
+
+            //Choose square at random
+            let chosenSquare = Math.floor(Math.random() * squareArray.length);
+        }
 
         if (squareArray.length < 1 && !winner) {
 
@@ -151,7 +164,7 @@ function changePlayer(OX) {
         } else {
 
             //Wait 0.75 seconds then add X to the square
-            setTimeout(() => {setSquare(squareArray[randomSquare], "X")}, 750);
+            setTimeout(() => {setSquare(squareArray[chosenSquare], "X")}, 750);
         }
 
     } else {
