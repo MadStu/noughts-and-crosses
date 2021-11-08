@@ -282,3 +282,15 @@ function computerSquareHard(squareArray){
     //Choose square at random and return the square number
     return squareArray[Math.floor(Math.random() * squareArray.length)];
 }
+
+window.addEventListener('load', function () {
+    let boardButtons = this.document.querySelectorAll('.game-square');
+    boardButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const selectedButton = this.getAttribute('data-button-number');
+            playerClick(selectedButton);
+        });
+    });
+    
+    
+});
