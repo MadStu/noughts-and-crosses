@@ -82,10 +82,18 @@ function checkWinner(OX) {
         setScoreboard(true, OX);
 
         // Declares the winner! And resets the game
-        (OX === "O") ? setTimeout(() => {alert("YOU WON! Game will reset :D")}, 100) : setTimeout(() => {alert("YOU LOST! Game will reset. Try again.")}, 100) ;
+        if (OX === "O"){
+
+            //Show some winning colours!
+            winnerAnimation();
+        } else {
+
+            //Show the losing colour
+            loserAnimation();
+        }
 
         setTimeout(() => {resetSquares()}, 1500);
-
+        
         //Changes global winner variable back to false
         winner = false;
     } else if (OX === "O"){
@@ -149,10 +157,13 @@ function changePlayer(OX) {
         //Check if all squares are full or not
         if (squareArray.length < 1 && !winner) {
 
-            //Alert if no winner, reset game and increment draw-score
-            setTimeout(() => {alert("No winner this time :( Game will reset.")}, 100);
-            setTimeout(() => {resetSquares()}, 2000);
+            //If no winner, reset game and increment draw-score
+            setTimeout(() => {resetSquares()}, 1000);
             setScoreboard(false);
+
+            //Show draw colour
+            drawAnimation();
+
         } else {
 
             //Assign a free square based on difficulty level
@@ -179,6 +190,12 @@ function resetSquares() {
 
     //Resets who's turn it is
     document.getElementById("game-turn").innerHTML = "Your";
+
+    //Shakey!
+    shakey();
+
+    //Change background back to normal
+    document.body.style.backgroundColor = "darkslategray";
 }
 
 /**
@@ -340,4 +357,38 @@ function shakey(){
     let shake = document.getElementById("game-container");
     shake.classList.add("shake-up");
     setTimeout(() => {shake.classList.remove("shake-up")}, 600);
+}
+
+function loserAnimation(){
+
+    //Turn background red
+    document.body.style.backgroundColor = "red";
+}
+
+function drawAnimation(){
+
+    //Turn backgroud black
+    document.body.style.backgroundColor = "black";
+}
+
+function winnerAnimation(){
+
+    //Winner! Celebrate with some party colours!
+    const bg = document.body.style.backgroundColor;
+    const colours = ["#FE53BB", "#09FBD3", "#F5D300", "#7122FA", "#B76CFD", 
+                        "#FF2281", "#011FFD", "#FDC7D7", "#E8E500", "#00FFCA", 
+                        "#33135C", "#FF9472", "#35212A", "#FE63B5", "darkslategray"];
+    let i = 0;
+
+    function change() {
+        // If we have run out of colors, stop the timer
+        if(i >= colours.length){ clearInterval(timer); }
+        
+        // Set the color and increment the index
+        document.body.style.backgroundColor = colours[i++];
+    }
+
+    // Start the timer but get a reference to it 
+    // so we can stop it later
+    const timer = setInterval(change, 50); 
 }
