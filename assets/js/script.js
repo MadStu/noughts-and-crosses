@@ -82,6 +82,9 @@ function checkWinner(OX) {
 
         //Changes global variable back to false
         winner = false;
+    } else if (OX === "O"){
+        //If no winner and it's the computer's turn
+        computerTurn();
     }
 }
 
@@ -101,21 +104,21 @@ function setScoreboard(win, OX) {
 }
 
 /**
- * Show who's turn it is
- * Tell computer to take a turn
+ * Show who's turn it is and check if there's a winner
  */
 function changePlayer(OX) {
-    //Check if there's a winner before changing player
-    checkWinner(OX); 
 
     if (OX === "O"){
 
         document.getElementById("game-turn").innerHTML = "Computer's";
-        computerTurn();
+        
     } else {
 
         document.getElementById("game-turn").innerHTML = "Your";
     }
+
+    //Check if there's a winner
+    checkWinner(OX); 
 }
 
 /**
@@ -131,6 +134,7 @@ function changePlayer(OX) {
         let squareArray = [];
 
         //Squares with active O or X will not be added to the array
+        //Loop through squares from 1-9.
         for (let i = 1; i <= 9; i++) {
             (document.getElementById(`square-${i}`).innerHTML === '') ? squareArray.push(i) : '' ;
         }
