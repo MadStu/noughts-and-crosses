@@ -127,7 +127,6 @@ function changePlayer(OX) {
     //Double check it's computer's turn
     if (document.getElementById("game-turn").innerHTML === "Computer's") {
         //Find a free square
-
         //Declare array for squares
         let squareArray = [];
 
@@ -147,8 +146,8 @@ function changePlayer(OX) {
             setScoreboard(false);
         } else {
 
-            //Wait 1 second then add X to the square
-            setTimeout(() => {setSquare(squareArray[randomSquare], "X")}, 1000);
+            //Wait 0.75 seconds then add X to the square
+            setTimeout(() => {setSquare(squareArray[randomSquare], "X")}, 750);
         }
 
     } else {
