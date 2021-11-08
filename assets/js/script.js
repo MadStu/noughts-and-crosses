@@ -354,7 +354,8 @@ window.addEventListener('load', function () {
 });
 
 /**
- * Shakes the game board
+ * Shakes the game board by adding a css animation class
+ * then removes the class so that the animation can be applied again
  */
 function shakey(){
     let shake = document.getElementById("game-container");
@@ -388,8 +389,8 @@ function winnerAnimation(){
     //Winner! Celebrate with some party colours!
     const bg = document.body.style.backgroundColor;
     const colours = ["#FE53BB", "#09FBD3", "#F5D300", "#7122FA", "#B76CFD", 
-                        "#FF2281", "#011FFD", "#FDC7D7", "#E8E500", "#00FFCA", 
-                        "#33135C", "#FF9472", "#35212A", "#FE63B5", "darkslategray"];
+                     "#FF2281", "#011FFD", "#FDC7D7", "#E8E500", "#00FFCA", 
+                     "#33135C", "#FF9472", "#35212A", "#FE63B5", "darkslategray"];
     let i = 0;
 
     function change() {
@@ -402,5 +403,5 @@ function winnerAnimation(){
 
     // Start the timer but get a reference to it 
     // so we can stop it later
-    const timer = setInterval(change, 75); 
+    const timer = setInterval(change, 70); 
 }
