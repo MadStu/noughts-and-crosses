@@ -144,17 +144,7 @@ function changePlayer(OX) {
             (document.getElementById(`square-${i}`).innerHTML === '') ? squareArray.push(i) : '' ;
         }
 
-        //Check if hardMode is activated
-        if (hardMode){
-
-            //Choose square based on existing O squares
-            let chosenSquare = computerSquareHard(squareArray);
-        } else {
-
-            //Choose square at random
-            let chosenSquare = computerSquareEasy(squareArray);
-        }
-
+        //Check if all squares are full or not
         if (squareArray.length < 1 && !winner) {
 
             //Alert if no winner, reset game and increment draw-score
@@ -162,6 +152,9 @@ function changePlayer(OX) {
             setTimeout(() => {resetSquares()}, 2000);
             setScoreboard(false);
         } else {
+
+            //Assign a free square based on difficulty level
+            let chosenSquare = (hardMode) ? computerSquareHard(squareArray) : computerSquareEasy(squareArray);
 
             //Wait 0.75 seconds then add X to the square
             setTimeout(() => {setSquare(squareArray[chosenSquare], "X")}, 750);
@@ -178,19 +171,87 @@ function changePlayer(OX) {
 function resetSquares() {
     for (let i = 1; i <= 9; i++) {
 
-        //Resets who's turn it is
-        document.getElementById("game-turn").innerHTML = "Your";
-
         //Resets all game squares to empty
         document.getElementById(`square-${i}`).innerHTML = '';
     }
+
+    //Resets who's turn it is
+    document.getElementById("game-turn").innerHTML = "Your";
 }
 
 /**
  * Chooses a square based on logic
  */
 function computerSquareHard(squareArray){
+    //If meets criteria choose hard else computerSquareEasy(squareArray)
+    //Check if 2 or more squares are available, else computerSquareEasy(squareArray)
+    if (squareArray.length > 1){
 
+        //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Elegible Squares are:
+        let eligibleNumsArray = [[1,2],[2,3],[1,3],[4,5],[5,6],[4,6],
+                                 [7,8],[8,9],[7,9],[1,4],[4,7],[1,7],
+                                 [2,5],[5,8],[2,8],[3,6],[6,9],[3,9],
+                                 [1,5],[5,9],[1,9],[3,5],[5,7],[3,7]];
+
+        //Declare array for player's squares
+        let playerArray = [];
+
+        //Squares with active O will be added to player's squares array
+        for (let i = 1; i <= 9; i++) {
+            (document.getElementById(`square-${i}`).innerHTML === "O") ? playerArray.push(i) : '' ;
+        }
+
+        //Loop through the winning squares to check against player squares
+        let i = 0;
+        while (i < eligibleNumsArray.length) {
+
+            if (eligibleNumsArray[i].every((val) => playerArray.includes(val)) && ) {
+                
+                //Match!
+                console.log(eligibleNumsArray[i]);
+                break;
+            }
+            i++;
+        }
+
+
+        return computerSquareEasy(squareArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    } else {
+
+        //Less than 2 squares left so just do the easy logic
+        return computerSquareEasy(squareArray);
+    }
 }
 
 /**
