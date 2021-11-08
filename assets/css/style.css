@@ -86,7 +86,6 @@ h3, p {
 
 /* The Modal (background) */
 .modal {
-    
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -96,35 +95,65 @@ h3, p {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-  }
-  
-  /* Modal Content */
-  .modal-content {
+}
+
+/* Modal Content */
+.modal-content {
     border-radius: 25px;
     background-color: #ffc2c7;
     margin: auto;
     padding: 20px;
     border: 2px solid #000;
     width: 80%;
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover, .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  #modal-text {
+#modal-text {
     font-family: edo;
     color: darkslategray;
     font-size: 100px;
-  }
+}
+
+/* Media queries */
+
+/* For screen sizes from 1250px wide and down */
+@media screen and (max-width: 700px){
+    h1 {
+        font-size: 35px;
+    }
+
+    .center {
+        max-width: 450px;
+    }
+
+    .game-square {
+        width: 150px;
+        height: 150px;
+        font-size: 140px;
+    }
+
+    .head-box {
+        width: 225px;
+        height: 50px;
+    }
+    h3, p {
+        font-size: 14px;
+    }
+
+    #hard-mode {
+        font-size: 14px;
+    }
+}
