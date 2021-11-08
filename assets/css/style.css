@@ -7,6 +7,7 @@ body {
     margin:0px;
     background-color: darkslategray;
     color: floralwhite;
+    transition: background-color 0.1s ease;
 }
 
 h1 {
@@ -81,18 +82,4 @@ h3, p {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-@keyframes loser {
-    from {background-color: darkslategray;}
-    to {background-color: red;}
-}
-
-@keyframes draw {
-    from {background-color: darkslategray;}
-    to {background-color: black;}
-}
-
-@keyframes reset {
-    to {background-color: darkslategray;}
 }

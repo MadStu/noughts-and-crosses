@@ -353,24 +353,36 @@ window.addEventListener('load', function () {
     });
 });
 
+/**
+ * Shakes the game board
+ */
 function shakey(){
     let shake = document.getElementById("game-container");
     shake.classList.add("shake-up");
     setTimeout(() => {shake.classList.remove("shake-up")}, 600);
 }
 
+/**
+ * Shows the losing colour
+ */
 function loserAnimation(){
 
     //Turn background red
     document.body.style.backgroundColor = "red";
 }
 
+/**
+ * Shows the neutral colour
+ */
 function drawAnimation(){
 
     //Turn backgroud black
     document.body.style.backgroundColor = "black";
 }
 
+/**
+ * Shows the winning colours!
+ */
 function winnerAnimation(){
 
     //Winner! Celebrate with some party colours!
@@ -390,5 +402,5 @@ function winnerAnimation(){
 
     // Start the timer but get a reference to it 
     // so we can stop it later
-    const timer = setInterval(change, 50); 
+    const timer = setInterval(change, 75); 
 }
