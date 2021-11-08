@@ -22,11 +22,11 @@ function playerClick(square){
 
         } else {
             //Square already taken
-            alert("Square already taken!");
+            shakey();
         }
     } else {
         //It's not the player's turn!
-        alert("Wait your turn!");
+        shakey();
     }
 }
 
@@ -335,3 +335,9 @@ window.addEventListener('load', function () {
         });
     });
 });
+
+function shakey(){
+    let shake = document.getElementById("game-container");
+    shake.classList.add("shake-up");
+    setTimeout(() => {shake.classList.remove("shake-up")}, 600);
+}
