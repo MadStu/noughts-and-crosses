@@ -30,9 +30,9 @@ h1, h2, h3, p {
     width: 200px;
     height: 200px;
     float: left;
-    font-size: 150px;
+    font-size: 180px;
     font-family: edo;
-    color: rgb(14, 14, 14);
+    color: #202020;
     text-align: center;
     margin: auto;
 }
