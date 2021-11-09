@@ -8,7 +8,7 @@ The live link can be found here - https://madstu.github.io/noughts-and-crosses/
 
 It is designed to be responsive and accessible on a range of devices, making it easy to navigate for all users.
 
-![Responsive Mockup](https://raw.githubusercontent.com/MadStu/HTMLCSSEPP/main/assets/images/readme-images/responsive-website-mockup.png)
+![Responsive Mockup](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/responsive-website-mockup.png)
 
 ## Features 
 
