@@ -187,9 +187,22 @@ a:hover {
     }
 
     .head-box {
-        width: 225px;
-        height: 50px;
+        width: 160px;
+        height: 35px;
     }
+
+    .hard-box-right {
+        width: 30px;
+    }
+
+    #hard-switch {
+        width: 100px;
+        height: 20px;
+        border-radius: 12px;
+        padding: 2px;
+        line-height: 20px;
+    }
+
     h3, p {
         font-size: 14px;
     }
@@ -220,9 +233,23 @@ a:hover {
     }
 
     .head-box {
-        width: 150px;
-        height: 22px;
+        width: 110px;
+        height: 20px;
     }
+
+    .hard-box-right {
+        width: 80px;
+    }
+
+    #hard-switch {
+        width: 60px;
+        height: 12px;
+        border-radius: 7px;
+        padding: 0px;
+        line-height: 8px;
+        border: 1px solid #000;
+    }
+
     h3, p {
         font-size: 9px;
     }

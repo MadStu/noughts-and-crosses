@@ -7,6 +7,7 @@ let winner = false;
 //hardMode gives the user a more challenging game
 //If hardMode is false the computer chooses a free square at random
 let hardMode = true;
+let beastMode = false;
 
 /**
  * Receive click id and start the game turn 
@@ -214,6 +215,9 @@ function resetSquares() {
  * Chooses a square based on logic
  */
 function computerSquareHard(squareArray){
+
+    beastMode ? console.log("Beast Mode Active") : console.log("Beast Mode Inactive");
+
     //If meets criteria choose hard else computerSquareEasy(squareArray)
     //Check if 2 or more squares are available, else computerSquareEasy(squareArray)
     if (squareArray.length > 1){
@@ -338,10 +342,15 @@ window.addEventListener('load', function () {
 
             //Check current mode, switch it around and reset scores
             if (document.getElementById("hard-mode").innerHTML === "ON"){
-                hardMode = false;
-                document.getElementById("hard-mode").innerHTML = "Off";
+                beastMode = true;
+                document.getElementById("hard-mode").innerHTML = "BEAST!";
                 resetScores();
-            } else {
+            } else if (document.getElementById("hard-mode").innerHTML === "BEAST!"){
+                hardMode = false;
+                beastMode = false;
+                document.getElementById("hard-mode").innerHTML = "OFF";
+                resetScores();
+            } else{
                 hardMode = true;
                 document.getElementById("hard-mode").innerHTML = "ON";
                 resetScores();
