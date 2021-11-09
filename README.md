@@ -41,7 +41,7 @@ It is designed to be responsive and accessible on a range of devices, making it 
 - __The Gameboard__
 
   - The Gameboard area is where you play the game.
-  - On top of the gameboard it displays who's turn it is also whether the hard mode is ON or OFF.
+  - On top of the gameboard it displays who's turn it is and also whether the hard mode is ON or OFF.
   - The hard mode can be toggled on or off by clicking or tapping the ON/OFF text.
   - The ON/OFF toggle is using the Edo font.
   - The game will reset if the user toggles the hard mode.
