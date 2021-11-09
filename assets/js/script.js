@@ -216,8 +216,10 @@ function resetSquares() {
  */
 function computerSquareHard(squareArray){
 
+    let activateTheBeast;
+
     //Do we activate THE BEAST? If not activated we'll continue in hard mode
-    let activateTheBeast = activateBeast(squareArray);
+    beastMode ? activateTheBeast = activateBeast() : activateTheBeast = 0;
     if (activateTheBeast === 0){
 
         //If meets criteria choose hard else computerSquareEasy(squareArray)
@@ -467,7 +469,7 @@ function modalBox(message){
  * Adds an increased level of intelligence to the computer
  * Beast mode activated.
  */
-function activateBeast(squareArray){
+function activateBeast(){
 
     //Elegible Squares are:
     let eligibleNumsArray = [[1,2],[2,3],[1,3],[4,5],[5,6],[4,6],
@@ -483,8 +485,8 @@ function activateBeast(squareArray){
         (document.getElementById(`square-${i}`).innerHTML === "X") ? computerArray.push(i) : '' ;
     }
 
-    //Declare the variable to return
-    let cSquare = computerSquareEasy(squareArray);
+    //Declare the variable with default value to return
+    let cSquare = 0;
 
     //Loop through the winning squares to check against player squares
     for (let i = 0; i < eligibleNumsArray.length; i++) {
@@ -493,7 +495,7 @@ function activateBeast(squareArray){
         if (eligibleNumsArray[i].every((val) => computerArray.includes(val))) {
 
             let arrStr = eligibleNumsArray[i].toString();
-
+            
             //Check if there's free squares next to the eligible lines
             if (arrStr === "1,2" && document.getElementById("square-3").innerHTML === ""){
                 cSquare = 3;
@@ -544,10 +546,7 @@ function activateBeast(squareArray){
             } else if (arrStr === "3,7" && document.getElementById("square-5").innerHTML === ""){
                 cSquare = 5;
             }
-        } else {
 
-            //If no eligible free squares, return 0
-            cSquare = 0;
         }
     }
 
