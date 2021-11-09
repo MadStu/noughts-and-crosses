@@ -2,7 +2,7 @@
 
 This is a fun website for visitors who want to play the fun and addictive game of Noughts and Crosses (also known as Tic-tac-toe or Xs and Os). The website's target audience are people that enjoy quick strategy games. The varying difficulty levels make it suitable for all ages and abilities.
 
-The key project goal is to provide the user with a trouble free game of Noughts and Crosses that has user controllable difficulty levels and which tracks the score accurately.
+The key project goal is to provide the user with a trouble free game of Noughts and Crosses that has user controllable difficulty levels and which tracks the score accurately. The user should expect to intuitively know how to interact with the game and the feedback given should illicit a postive emotional response.
 
 The live link can be found here - https://madstu.github.io/noughts-and-crosses/
 

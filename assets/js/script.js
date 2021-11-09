@@ -7,13 +7,15 @@ let winner = false;
 //hardMode gives the user a more challenging game
 //If hardMode is false the computer chooses a free square at random
 let hardMode = true;
+
+//Set global variable beastMode to a falsey state
+//beastMode adds another level of intelligence to the computer
 let beastMode = false;
 
 /**
  * Receive click id and start the game turn 
  */
 function playerClick(square){
-
     //Check if player's turn
     if (document.getElementById("game-turn").innerHTML === "Your"){
 
@@ -54,7 +56,6 @@ function setSquare(square, OX) {
  * Check if there's 3 lines or if all squares are filled
  */
 function checkWinner(OX) {
-
     //Winning Squares are:
     let winNumsArray = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 
@@ -67,28 +68,22 @@ function checkWinner(OX) {
             squareArray.push(i);
         }
     }
-
     //Loop through the winning squares to check against player squares
     let i = 0;
     while (i < winNumsArray.length) {
-
         if (winNumsArray[i].every((val) => squareArray.includes(val))) {
-            
             //Winner!
             winner = true;
             break;
         }
         i++;
     }
-
     if (winner){
-
         //Increments the scoreboard
         setScoreboard(true, OX);
 
         // Declares the winner! And resets the game
         if (OX === "O"){
-
             //Show some winning colours!
             winnerAnimation();
 
@@ -96,7 +91,6 @@ function checkWinner(OX) {
             modalBox("WINNER!");
 
         } else {
-
             //Show the losing colour
             loserAnimation();
 
@@ -108,7 +102,6 @@ function checkWinner(OX) {
         //Changes global winner variable back to false
         winner = false;
     } else if (OX === "O"){
-
         //If no winner and it's the computer's turn
         computerTurn();
     }
@@ -149,7 +142,6 @@ function changePlayer(OX) {
  * short delay to simulate the computer thinking
  */
  function computerTurn() {
-
     //Double check it's computer's turn
     if (document.getElementById("game-turn").innerHTML === "Computer's") {
         //Find a free square
@@ -163,10 +155,8 @@ function changePlayer(OX) {
                 squareArray.push(i);
             }
         }
-
         //Check if all squares are full or not
         if (squareArray.length < 1 && !winner) {
-
             //If no winner, reset game and increment draw-score
             setTimeout(() => {resetSquares();}, 1000);
             setScoreboard(false);
@@ -176,16 +166,13 @@ function changePlayer(OX) {
 
             //Draw message
             modalBox("Draw");
-
         } else {
-
             //Assign a free square based on difficulty level
             let chosenSquare = (hardMode) ? computerSquareHard(squareArray) : computerSquareEasy(squareArray);
 
             //Wait 0.75 seconds then add X to the square
             setTimeout(() => {setSquare(chosenSquare, "X");}, 750);
         }
-
     } else {
         console.log("Error, It's not the computer's turn?");
     }
@@ -200,7 +187,6 @@ function resetSquares() {
         //Resets all game squares to empty
         document.getElementById(`square-${i}`).innerHTML = '';
     }
-
     //Resets who's turn it is
     document.getElementById("game-turn").innerHTML = "Your";
 
@@ -215,7 +201,6 @@ function resetSquares() {
  * Chooses a square based on logic
  */
 function computerSquareHard(squareArray){
-
     //Declare variable for upcoming beast slaying
     let activateTheBeast;
 
@@ -225,7 +210,6 @@ function computerSquareHard(squareArray){
     } else {
         activateTheBeast = 0;
     }
-
     if (activateTheBeast === 0){
 
         //If meets criteria choose hard else computerSquareEasy(squareArray)
@@ -247,7 +231,6 @@ function computerSquareHard(squareArray){
                     playerArray.push(i);
                 }
             }
-
             //Declare the variable to return
             let cSquare = computerSquareEasy(squareArray);
 
@@ -314,12 +297,10 @@ function computerSquareHard(squareArray){
             //Return the square
             return cSquare;
         } else {
-
             //Less than 2 squares left so just do the easy logic
             return computerSquareEasy(squareArray);
         }
     } else {
-
         //Return THE BEAST's choice of number
         return activateTheBeast;
     }
@@ -329,7 +310,6 @@ function computerSquareHard(squareArray){
  * Chooses a square randomly
  */
  function computerSquareEasy(squareArray){
-
     //Choose square at random and return the square number
     return squareArray[Math.floor(Math.random() * squareArray.length)];
 }
@@ -374,6 +354,10 @@ window.addEventListener('load', function () {
         });
     });
 
+    //Below code to listen for click events was originally provided by 
+    //my mentor although I have modified it slightly and added
+    //comments so that I can look back and know what it's doing.
+
     //Define boardSquares and listen for click event
     let boardSquares = this.document.querySelectorAll('.game-square');
     boardSquares.forEach(function(clicked) {
@@ -404,7 +388,6 @@ function shakey(){
  * Shows the losing colour
  */
 function loserAnimation(){
-
     //Turn background red
     document.body.style.backgroundColor = "red";
 }
@@ -413,7 +396,6 @@ function loserAnimation(){
  * Shows the neutral colour
  */
 function drawAnimation(){
-
     //Turn backgroud black
     document.body.style.backgroundColor = "black";
 }
@@ -422,7 +404,6 @@ function drawAnimation(){
  * Shows the winning colours!
  */
 function winnerAnimation(){
-
     //Winner! Celebrate with some party colours!
     const colours = ["#FE53BB", "#09FBD3", "#F5D300", "#7122FA", "#B76CFD", 
                      "#FF2281", "#011FFD", "#FDC7D7", "#E8E500", "#00FFCA", 
@@ -436,14 +417,19 @@ function winnerAnimation(){
         //Set the colour and increment the index
         document.body.style.backgroundColor = colours[i++];
     }
-
     //Start the timer but get a reference to it so we can stop it later
     const timer = setInterval(change, 70); 
 }
 
-function modalBox(message){
+//Below I got the orginal code from 
+//https://www.w3schools.com/howto/howto_css_modals.asp
+//then I've edited to work with my code and fit my needs
 
-    //Chage the modal text content
+/**
+ * Display the modal box
+ */
+function modalBox(message){
+    //Change the modal text content
     document.getElementById("modal-text").innerHTML = message;
 
     //Get the modal
@@ -462,7 +448,6 @@ function modalBox(message){
     span.onclick = function() {
         modal.style.display = "none";
     };
-
     //When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
@@ -476,7 +461,6 @@ function modalBox(message){
  * Beast mode activated.
  */
 function activateBeast(){
-
     //Elegible Squares are:
     let eligibleNumsArray = [[1,2],[2,3],[1,3],[4,5],[5,6],[4,6],
                              [7,8],[8,9],[7,9],[1,4],[4,7],[1,7],
@@ -492,7 +476,6 @@ function activateBeast(){
             computerArray.push(i);
         }
     }
-
     //Declare the variable with default value to return
     let cSquare = 0;
 
