@@ -217,7 +217,7 @@ function resetSquares() {
 function computerSquareHard(squareArray){
 
     //Do we activate THE BEAST? If not activated we'll continue in hard mode
-    let activateTheBeast = activateBeast();
+    let activateTheBeast = activateBeast(squareArray);
     if (activateTheBeast === 0){
 
         //If meets criteria choose hard else computerSquareEasy(squareArray)
@@ -463,18 +463,22 @@ function modalBox(message){
     };
 }
 
-function activateBeast(){
+/**
+ * Adds an increased level of intelligence to the computer
+ * Beast mode activated.
+ */
+function activateBeast(squareArray){
 
     //Elegible Squares are:
     let eligibleNumsArray = [[1,2],[2,3],[1,3],[4,5],[5,6],[4,6],
-    [7,8],[8,9],[7,9],[1,4],[4,7],[1,7],
-    [2,5],[5,8],[2,8],[3,6],[6,9],[3,9],
-    [1,5],[5,9],[1,9],[3,5],[5,7],[3,7]];
+                             [7,8],[8,9],[7,9],[1,4],[4,7],[1,7],
+                             [2,5],[5,8],[2,8],[3,6],[6,9],[3,9],
+                             [1,5],[5,9],[1,9],[3,5],[5,7],[3,7]];
 
-    //Declare array for player's squares
+    //Declare array for computer's squares
     let computerArray = [];
 
-    //Squares with active X will be added to player's squares array
+    //Squares with active X will be added to computer's squares array
     for (let i = 1; i <= 9; i++) {
         (document.getElementById(`square-${i}`).innerHTML === "X") ? computerArray.push(i) : '' ;
     }
