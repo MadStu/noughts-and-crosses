@@ -55,7 +55,7 @@ It is designed to be responsive and accessible on a range of devices, making it 
 - __The Modal__
 
   - The modal displays a brief message to provide feedback to the user about the conclusion of each game.
-  - There are 3 game outcomes. If the user wins the game, they're shown a message that reads "WINNER!". If they lose, the message reads "LOSER" and if there is no winnerm the message reads "DRAW".
+  - There are 3 game outcomes. If the user wins the game, they're shown a message that reads "WINNER!". If they lose, the message reads "LOSER" and if there is no winner the message reads "DRAW".
   - The modal message uses the Edo font and is the same colour as the main  background, darkslategray.
   - The modal itself has a pink background, black outline and rounded edges.
   - The modal removes itself automatically within a few moments of displaying, but you can also click anywhere outside of the modal, or on the cross to close the modal if required.
@@ -65,9 +65,9 @@ It is designed to be responsive and accessible on a range of devices, making it 
 - __The Scoreboard and Footer__
 
   - This Scoreboard area shows the user their current score, the computer's current score and the number of draws they've had.
-  - The scores update once the game has reached it's conclusion and a winner or draw has been declared.
+  - The scores update once each game has reached it's conclusion and a winner or draw has been declared.
   - The scores reset to 0 if the player changes difficulty.
-  - The Footer...
+  - The footer provides links to the author's linkedin page and also the project's GitHub page. The links open in new windows.
 
 ![The Scoreboard and Footer](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/scoreboard-and-footer-screenshot.png)
 
@@ -81,6 +81,8 @@ It is designed to be responsive and accessible on a range of devices, making it 
 ## Testing 
 
 I tested the website on a number of browsers and devices and all is working as intended.
+
+I also asked a number of my fellow students to test it's functionality and try to break it. Any bugs found are listed in the [Unfixed Bugs](#Unfixed) area
 
 The responsive design allows for different screen sizes as proven by using [Responsinator](http://www.responsinator.com/?url=madstu.github.io%2Fnoughts-and-crosses%2F)
 
