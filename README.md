@@ -29,56 +29,32 @@ It is designed to be responsive and accessible on a range of devices, making it 
   - The text colour is floralwhite (#FFFAF0) which is another off-white colour to just soften the brightness of a hard bright white a little and allows the user to keep playing without it becoming a strain.
   - The background colours do change depending on the outcome of the game. If the game is a draw, the background transitions into black. If the computer wins it turns bright red for a moment. But if the user wins it briefly becomes a kaleidoscope of bright and contrasting colours to celebrate.
 
-![Colour Scheme](https://github.com/MadStu/noughts-and-crosses/blob/main/assets/images/readme-images/colour-scheme.png?raw=true)
+![Colour Scheme](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/colour-scheme.png)
 
-- __Navigation Bar__
-
-  - Featured at the top of the page, the full responsive navigation bar includes links to the History, Events and contact sections on the website.
-  - This section will allow the user to easily navigate to the section of the page that most interests them. 
-  - The styling changes as you hover and activate each link to give the user positive feedback confirming the action they've taken.
-
-![Nav Bar](https://raw.githubusercontent.com/MadStu/HTMLCSSEPP/main/assets/images/readme-images/nav-bar.png)
-
-- __The Landing Page Image__
+- __The Title Area__
 
   - The landing includes a bold title of the website name and photograph of the motorcycle being used in a competition.
   - This section displays to the user exactly what the subject of this website is about.
   - The image stretches the entire width of the screen and no matter what your screen size, you should always be able to see the "Harley-Davidson" name on the side of the bike.
 
-![Landing Page](https://raw.githubusercontent.com/MadStu/HTMLCSSEPP/main/assets/images/readme-images/landing-image.png)
+![The Title Area](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/title-area-screenshot.png)
 
-- __History Section__
+- __The Gameboard__
 
   - The history section gives the user a brief history about these motorcycles.
   - The user will also see a small gallery of images of the motorcycle in various situations.
   - The images border colors change as the user hovers over them.
 
-![History Section](https://raw.githubusercontent.com/MadStu/HTMLCSSEPP/main/assets/images/readme-images/history-image.png)
+![The Gameboard](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/gameboard-screenshot.png)
 
-- __Events Section__
+- __The Scoreboard and Footer__
 
   - This section allows the user to see an overview of our annual events and locations.
   - This section will be updated as more events are held by users.
   - This section's description also provides a link to the contact form.
   - The event box borders change colour when the user hovers over them.
 
-![Events Section](https://raw.githubusercontent.com/MadStu/HTMLCSSEPP/main/assets/images/readme-images/events-image.png)
-
-- __Contact Form__ 
-
-  - The contact form allows users to send me a message if they have questions regarding the motorcycle or events. 
-  - The form ensures they have filled out all their details correctly and asks whether they own a motorcycle or not.
-  - The input labels are fully responsive giving the user good feedback.
-  - The submit button is responsive to let the user know their mouse is in the right place and when they've submitted the form.
-
-![Contact Form](https://raw.githubusercontent.com/MadStu/HTMLCSSEPP/main/assets/images/readme-images/contact-image.png)
-
-- __Footer__
-
-  - The footer section provides links to some social media websites which all open in a new window.
-  - It also tells the user who created the website and links externally to my github page.
-
-![Footer](https://raw.githubusercontent.com/MadStu/HTMLCSSEPP/main/assets/images/readme-images/footer-image.png)
+![The Scoreboard and Footer](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/scoreboard-and-footer-screenshot.png)
 
 ### Features Left to Implement
 
