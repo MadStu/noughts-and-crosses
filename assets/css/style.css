@@ -34,15 +34,37 @@ h3, p {
 /* Head container */
 
 .head-box {
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 230px;
     height: 50px;
     float: left;
     text-transform: uppercase;
+    text-align: center;
+}
+
+/* Hard-mode switch */
+
+.hard-box-right {
+    width: 40px;
+}
+
+#hard-switch {
+    width: 120px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: #ffc2c7;
+    padding: 2px;
+    border: 2px solid #000;
+    text-align: center;
+    line-height: 25px;
 }
 
 #hard-mode {
     font-family: edo, Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
+    color: black;
 }
 
 /* Game container */
