@@ -16,13 +16,13 @@ It is designed to be responsive and accessible on a range of devices, making it 
 
 - __Typography__
 
-  - For the main and subsequent headings I chose the "Stardos Stencil" font from [Google Fonts](https://fonts.google.com/specimen/Stardos+Stencil).
-  - This font is of a military style which I felt was in keeping with the main subject of the website.
-  - I chose to style the headings that use Stardos Stencil font in uppercase, again to be in-keeping with the military style.
+  - For the main heading, scoreboard and the noughts and crosses themselves I chose the "Edo" font from [1001 Fonts](https://www.1001freefonts.com/edo.font).
+  - This font is in a hand drawn looking style which I users will appreciate and help them to feel like they're playing it by hand with a friend.
+  - I also styled the hard mode on/off switch with the same Edo font.
 
 - __Colour Scheme__
 
-  - I intially used the colormind.io to generate a matching colour scheme which generated some initial colors.
+  - I wanted to use.
   - I kept the first colour as the main background colour and tweaked the others for contrast reasons. I used 4 colours in total. 
   - Due to the military style of the MT350, I chose to go with a military style colour scheme, with some pink highlights to soften it all a little.
 
