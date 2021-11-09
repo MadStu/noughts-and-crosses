@@ -127,6 +127,15 @@ h3, p {
     font-size: 100px;
 }
 
+a {
+    color: floralwhite;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* Media queries */
 
 /* For screen sizes from 700px wide and down */
