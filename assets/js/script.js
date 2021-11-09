@@ -216,96 +216,105 @@ function resetSquares() {
  */
 function computerSquareHard(squareArray){
 
-    beastMode ? console.log("Beast Mode Active") : console.log("Beast Mode Inactive");
+    let activateTheBeast;
 
-    //If meets criteria choose hard else computerSquareEasy(squareArray)
-    //Check if 2 or more squares are available, else computerSquareEasy(squareArray)
-    if (squareArray.length > 1){
+    //Do we activate THE BEAST? If not activated we'll continue in hard mode
+    beastMode ? activateTheBeast = activateBeast() : activateTheBeast = 0;
+    if (activateTheBeast === 0){
 
-        //Elegible Squares are:
-        let eligibleNumsArray = [[1,2],[2,3],[1,3],[4,5],[5,6],[4,6],
-                                 [7,8],[8,9],[7,9],[1,4],[4,7],[1,7],
-                                 [2,5],[5,8],[2,8],[3,6],[6,9],[3,9],
-                                 [1,5],[5,9],[1,9],[3,5],[5,7],[3,7]];
+        //If meets criteria choose hard else computerSquareEasy(squareArray)
+        //Check if 2 or more squares are available, else computerSquareEasy(squareArray)
+        if (squareArray.length > 1){
 
-        //Declare array for player's squares
-        let playerArray = [];
+            //Elegible Squares are:
+            let eligibleNumsArray = [[1,2],[2,3],[1,3],[4,5],[5,6],[4,6],
+                                    [7,8],[8,9],[7,9],[1,4],[4,7],[1,7],
+                                    [2,5],[5,8],[2,8],[3,6],[6,9],[3,9],
+                                    [1,5],[5,9],[1,9],[3,5],[5,7],[3,7]];
 
-        //Squares with active O will be added to player's squares array
-        for (let i = 1; i <= 9; i++) {
-            (document.getElementById(`square-${i}`).innerHTML === "O") ? playerArray.push(i) : '' ;
-        }
+            //Declare array for player's squares
+            let playerArray = [];
 
-        //Declare the variable to return
-        let cSquare = computerSquareEasy(squareArray);
+            //Squares with active O will be added to player's squares array
+            for (let i = 1; i <= 9; i++) {
+                (document.getElementById(`square-${i}`).innerHTML === "O") ? playerArray.push(i) : '' ;
+            }
 
-        //Loop through the winning squares to check against player squares
-        for (let i = 0; i < eligibleNumsArray.length; i++) {
+            //Declare the variable to return
+            let cSquare = computerSquareEasy(squareArray);
 
-            //Checks if player squares match with elegible squares
-            if (eligibleNumsArray[i].every((val) => playerArray.includes(val))) {
-                
-                let arrStr = eligibleNumsArray[i].toString();
+            //Loop through the winning squares to check against player squares
+            for (let i = 0; i < eligibleNumsArray.length; i++) {
 
-                //Check if there's free squares next to the eligible lines
-                if (arrStr === "1,2" && document.getElementById("square-3").innerHTML === ""){
-                    cSquare = 3;
-                } else if (arrStr === "2,3" && document.getElementById("square-1").innerHTML === ""){
-                    cSquare = 1;
-                } else if (arrStr === "1,3" && document.getElementById("square-2").innerHTML === ""){
-                    cSquare = 2;
-                } else if (arrStr === "4,5" && document.getElementById("square-6").innerHTML === ""){
-                    cSquare = 6;
-                } else if (arrStr === "5,6" && document.getElementById("square-4").innerHTML === ""){
-                    cSquare = 4;
-                } else if (arrStr === "4,6" && document.getElementById("square-5").innerHTML === ""){
-                    cSquare = 5;
-                } else if (arrStr === "7,8" && document.getElementById("square-9").innerHTML === ""){
-                    cSquare = 9;
-                } else if (arrStr === "8,9" && document.getElementById("square-7").innerHTML === ""){
-                    cSquare = 7;
-                } else if (arrStr === "7,9" && document.getElementById("square-8").innerHTML === ""){
-                    cSquare = 8;
-                } else if (arrStr === "1,4" && document.getElementById("square-7").innerHTML === ""){
-                    cSquare = 7;
-                } else if (arrStr === "4,7" && document.getElementById("square-1").innerHTML === ""){
-                    cSquare = 1;
-                } else if (arrStr === "1,7" && document.getElementById("square-4").innerHTML === ""){
-                    cSquare = 4;
-                } else if (arrStr === "2,5" && document.getElementById("square-8").innerHTML === ""){
-                    cSquare = 8;
-                } else if (arrStr === "5,8" && document.getElementById("square-2").innerHTML === ""){
-                    cSquare = 2;
-                } else if (arrStr === "2,8" && document.getElementById("square-5").innerHTML === ""){
-                    cSquare = 5;
-                } else if (arrStr === "3,6" && document.getElementById("square-9").innerHTML === ""){
-                    cSquare = 9;
-                } else if (arrStr === "6,9" && document.getElementById("square-3").innerHTML === ""){
-                    cSquare = 3;
-                } else if (arrStr === "3,9" && document.getElementById("square-6").innerHTML === ""){
-                    cSquare = 6;
-                } else if (arrStr === "1,5" && document.getElementById("square-9").innerHTML === ""){
-                    cSquare = 9;
-                } else if (arrStr === "5,9" && document.getElementById("square-1").innerHTML === ""){
-                    cSquare = 1;
-                } else if (arrStr === "1,9" && document.getElementById("square-5").innerHTML === ""){
-                    cSquare = 5;
-                } else if (arrStr === "3,5" && document.getElementById("square-7").innerHTML === ""){
-                    cSquare = 7;
-                } else if (arrStr === "5,7" && document.getElementById("square-3").innerHTML === ""){
-                    cSquare = 3;
-                } else if (arrStr === "3,7" && document.getElementById("square-5").innerHTML === ""){
-                    cSquare = 5;
+                //Checks if player squares match with elegible squares
+                if (eligibleNumsArray[i].every((val) => playerArray.includes(val))) {
+                    
+                    let arrStr = eligibleNumsArray[i].toString();
+
+                    //Check if there's free squares next to the eligible lines
+                    if (arrStr === "1,2" && document.getElementById("square-3").innerHTML === ""){
+                        cSquare = 3;
+                    } else if (arrStr === "2,3" && document.getElementById("square-1").innerHTML === ""){
+                        cSquare = 1;
+                    } else if (arrStr === "1,3" && document.getElementById("square-2").innerHTML === ""){
+                        cSquare = 2;
+                    } else if (arrStr === "4,5" && document.getElementById("square-6").innerHTML === ""){
+                        cSquare = 6;
+                    } else if (arrStr === "5,6" && document.getElementById("square-4").innerHTML === ""){
+                        cSquare = 4;
+                    } else if (arrStr === "4,6" && document.getElementById("square-5").innerHTML === ""){
+                        cSquare = 5;
+                    } else if (arrStr === "7,8" && document.getElementById("square-9").innerHTML === ""){
+                        cSquare = 9;
+                    } else if (arrStr === "8,9" && document.getElementById("square-7").innerHTML === ""){
+                        cSquare = 7;
+                    } else if (arrStr === "7,9" && document.getElementById("square-8").innerHTML === ""){
+                        cSquare = 8;
+                    } else if (arrStr === "1,4" && document.getElementById("square-7").innerHTML === ""){
+                        cSquare = 7;
+                    } else if (arrStr === "4,7" && document.getElementById("square-1").innerHTML === ""){
+                        cSquare = 1;
+                    } else if (arrStr === "1,7" && document.getElementById("square-4").innerHTML === ""){
+                        cSquare = 4;
+                    } else if (arrStr === "2,5" && document.getElementById("square-8").innerHTML === ""){
+                        cSquare = 8;
+                    } else if (arrStr === "5,8" && document.getElementById("square-2").innerHTML === ""){
+                        cSquare = 2;
+                    } else if (arrStr === "2,8" && document.getElementById("square-5").innerHTML === ""){
+                        cSquare = 5;
+                    } else if (arrStr === "3,6" && document.getElementById("square-9").innerHTML === ""){
+                        cSquare = 9;
+                    } else if (arrStr === "6,9" && document.getElementById("square-3").innerHTML === ""){
+                        cSquare = 3;
+                    } else if (arrStr === "3,9" && document.getElementById("square-6").innerHTML === ""){
+                        cSquare = 6;
+                    } else if (arrStr === "1,5" && document.getElementById("square-9").innerHTML === ""){
+                        cSquare = 9;
+                    } else if (arrStr === "5,9" && document.getElementById("square-1").innerHTML === ""){
+                        cSquare = 1;
+                    } else if (arrStr === "1,9" && document.getElementById("square-5").innerHTML === ""){
+                        cSquare = 5;
+                    } else if (arrStr === "3,5" && document.getElementById("square-7").innerHTML === ""){
+                        cSquare = 7;
+                    } else if (arrStr === "5,7" && document.getElementById("square-3").innerHTML === ""){
+                        cSquare = 3;
+                    } else if (arrStr === "3,7" && document.getElementById("square-5").innerHTML === ""){
+                        cSquare = 5;
+                    }
                 }
             }
-        }
 
-        //Return the square
-        return cSquare;
+            //Return the square
+            return cSquare;
+        } else {
+
+            //Less than 2 squares left so just do the easy logic
+            return computerSquareEasy(squareArray);
+        }
     } else {
 
-        //Less than 2 squares left so just do the easy logic
-        return computerSquareEasy(squareArray);
+        //Return THE BEAST's choice of number
+        return activateTheBeast;
     }
 }
 
@@ -454,4 +463,93 @@ function modalBox(message){
             modal.style.display = "none";
         }
     };
+}
+
+/**
+ * Adds an increased level of intelligence to the computer
+ * Beast mode activated.
+ */
+function activateBeast(){
+
+    //Elegible Squares are:
+    let eligibleNumsArray = [[1,2],[2,3],[1,3],[4,5],[5,6],[4,6],
+                             [7,8],[8,9],[7,9],[1,4],[4,7],[1,7],
+                             [2,5],[5,8],[2,8],[3,6],[6,9],[3,9],
+                             [1,5],[5,9],[1,9],[3,5],[5,7],[3,7]];
+
+    //Declare array for computer's squares
+    let computerArray = [];
+
+    //Squares with active X will be added to computer's squares array
+    for (let i = 1; i <= 9; i++) {
+        (document.getElementById(`square-${i}`).innerHTML === "X") ? computerArray.push(i) : '' ;
+    }
+
+    //Declare the variable with default value to return
+    let cSquare = 0;
+
+    //Loop through the winning squares to check against player squares
+    for (let i = 0; i < eligibleNumsArray.length; i++) {
+
+    //Checks if player squares match with elegible squares
+        if (eligibleNumsArray[i].every((val) => computerArray.includes(val))) {
+
+            let arrStr = eligibleNumsArray[i].toString();
+            
+            //Check if there's free squares next to the eligible lines
+            if (arrStr === "1,2" && document.getElementById("square-3").innerHTML === ""){
+                cSquare = 3;
+            } else if (arrStr === "2,3" && document.getElementById("square-1").innerHTML === ""){
+                cSquare = 1;
+            } else if (arrStr === "1,3" && document.getElementById("square-2").innerHTML === ""){
+                cSquare = 2;
+            } else if (arrStr === "4,5" && document.getElementById("square-6").innerHTML === ""){
+                cSquare = 6;
+            } else if (arrStr === "5,6" && document.getElementById("square-4").innerHTML === ""){
+                cSquare = 4;
+            } else if (arrStr === "4,6" && document.getElementById("square-5").innerHTML === ""){
+                cSquare = 5;
+            } else if (arrStr === "7,8" && document.getElementById("square-9").innerHTML === ""){
+                cSquare = 9;
+            } else if (arrStr === "8,9" && document.getElementById("square-7").innerHTML === ""){
+                cSquare = 7;
+            } else if (arrStr === "7,9" && document.getElementById("square-8").innerHTML === ""){
+                cSquare = 8;
+            } else if (arrStr === "1,4" && document.getElementById("square-7").innerHTML === ""){
+                cSquare = 7;
+            } else if (arrStr === "4,7" && document.getElementById("square-1").innerHTML === ""){
+                cSquare = 1;
+            } else if (arrStr === "1,7" && document.getElementById("square-4").innerHTML === ""){
+                cSquare = 4;
+            } else if (arrStr === "2,5" && document.getElementById("square-8").innerHTML === ""){
+                cSquare = 8;
+            } else if (arrStr === "5,8" && document.getElementById("square-2").innerHTML === ""){
+                cSquare = 2;
+            } else if (arrStr === "2,8" && document.getElementById("square-5").innerHTML === ""){
+                cSquare = 5;
+            } else if (arrStr === "3,6" && document.getElementById("square-9").innerHTML === ""){
+                cSquare = 9;
+            } else if (arrStr === "6,9" && document.getElementById("square-3").innerHTML === ""){
+                cSquare = 3;
+            } else if (arrStr === "3,9" && document.getElementById("square-6").innerHTML === ""){
+                cSquare = 6;
+            } else if (arrStr === "1,5" && document.getElementById("square-9").innerHTML === ""){
+                cSquare = 9;
+            } else if (arrStr === "5,9" && document.getElementById("square-1").innerHTML === ""){
+                cSquare = 1;
+            } else if (arrStr === "1,9" && document.getElementById("square-5").innerHTML === ""){
+                cSquare = 5;
+            } else if (arrStr === "3,5" && document.getElementById("square-7").innerHTML === ""){
+                cSquare = 7;
+            } else if (arrStr === "5,7" && document.getElementById("square-3").innerHTML === ""){
+                cSquare = 3;
+            } else if (arrStr === "3,7" && document.getElementById("square-5").innerHTML === ""){
+                cSquare = 5;
+            }
+
+        }
+    }
+
+    //Return the square
+    return cSquare;
 }
