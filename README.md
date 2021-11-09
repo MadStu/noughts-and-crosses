@@ -99,7 +99,7 @@ The responsive design allows for different screen sizes as proven by using [Resp
 - Accessibility
   - I confirmed that the colours and fonts chosen are easy to read and accesible by running it through lighthouse in devtools.
 
-![Lighthouse Score](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/lighthouse-score.png)
+![Lighthouse Score](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/lighthouse-results.png)
 
 ### Unfixed Bugs
 
