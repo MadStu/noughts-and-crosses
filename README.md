@@ -81,6 +81,8 @@ It is designed to be responsive and accessible on a range of devices, making it 
 
 - Add sound effects.
 - Add another difficulty level.
+- Take turns with the computer at who goes first.
+- Allow user to choose to play as noughts or crosses.
 
 ## Testing 
 
