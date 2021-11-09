@@ -33,19 +33,30 @@ It is designed to be responsive and accessible on a range of devices, making it 
 
 - __The Title Area__
 
-  - The landing includes a bold title of the website name and photograph of the motorcycle being used in a competition.
-  - This section displays to the user exactly what the subject of this website is about.
-  - The image stretches the entire width of the screen and no matter what your screen size, you should always be able to see the "Harley-Davidson" name on the side of the bike.
+  - The title area has a bold title of the website/game name in the Edo font.
+  - This section tells the user how to win the game.
 
 ![The Title Area](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/title-area-screenshot.png)
 
 - __The Gameboard__
 
-  - The history section gives the user a brief history about these motorcycles.
-  - The user will also see a small gallery of images of the motorcycle in various situations.
-  - The images border colors change as the user hovers over them.
+  - The Gameboard area is where you play the game.
+  - The user can click or tap on whatever square they'd like to take their turn.
+  - The gameboard will shake to provide feedback to the user when they try to take a turn but the square is already occupied, or if they try to place their nought but it's not their turn.
+  - The gameboard will also shake when it's resetting itself.
+  - The gameboard has rounded edges to provide a more visually comfortable playing area.
 
 ![The Gameboard](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/gameboard-screenshot.png)
+
+- __The Modal__
+
+  - The modal displays a brief message to provide feedback to the user about the conclusion of each game.
+  - There are 3 game outcomes. If the user wins the game, they're shown a message that reads "WINNER!". If they lose, the message reads "LOSER" and if there is no winnerm the message reads "DRAW".
+  - The modal message uses the Edo font and is the same colour as the main  background, darkslategray.
+  - The modal itself has a pink background, black outline and rounded edges.
+  - The modal removes itself automatically within a few moments of displaying, but you can also click anywhere outside of the modal, or on the cross to close the modal if required.
+
+![The Modal](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/modal-screenshot.png)
 
 - __The Scoreboard and Footer__
 
