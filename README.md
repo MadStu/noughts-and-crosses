@@ -17,14 +17,16 @@ It is designed to be responsive and accessible on a range of devices, making it 
 - __Typography__
 
   - For the main heading, scoreboard and the noughts and crosses themselves I chose the "Edo" font from [1001 Fonts](https://www.1001freefonts.com/edo.font).
-  - This font is in a hand drawn looking style which I users will appreciate and help them to feel like they're playing it by hand with a friend.
+  - This font is in a hand drawn, brushed ink looking style which users will appreciate and help them to feel like they're playing it by hand with a friend.
   - I also styled the hard mode on/off switch with the same Edo font.
 
 - __Colour Scheme__
 
-  - I wanted to use.
-  - I kept the first colour as the main background colour and tweaked the others for contrast reasons. I used 4 colours in total. 
-  - Due to the military style of the MT350, I chose to go with a military style colour scheme, with some pink highlights to soften it all a little.
+  - I wanted to use black and white colours for the game, as when we played as children it was mostly black ink on white paper, so I have a slightly off-white colour called whitesmoke to represent a piece of paper.
+  - The noughts and crosses on the game are black to provide high contrast represent the black ink.
+  - I looked at a lot of background colours and felt the darkslategray colour provided good contrast between the text, the gameboard and the background. And it's also nice and comfortable to look at, not being too bright or too dark.
+  - The text colour is floralwhite which is another off-white colour to just soften the brightness of a hard bright white a little and allows the user to keep playing without it becoming a strain.
+  - The background colours do change depending on the outcome of the game. If the game is a draw, the background transitions into black. If the computer wins it turns bright red for a moment. But if the user wins it briefly becomes a kaleidoscope of bright and contrasting colours to celebrate.
 
 ![Colour Scheme](https://raw.githubusercontent.com/MadStu/HTMLCSSEPP/main/assets/images/readme-images/colour-scheme.png)
 
