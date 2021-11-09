@@ -129,7 +129,7 @@ h3, p {
 
 /* Media queries */
 
-/* For screen sizes from 1250px wide and down */
+/* For screen sizes from 700px wide and down */
 @media screen and (max-width: 700px){
     h1 {
         font-size: 35px;
@@ -159,5 +159,38 @@ h3, p {
 
     #modal-text {
         font-size: 90px;
+    }
+}
+
+/* For screen sizes from 350px wide and down */
+@media screen and (max-width: 350px){
+    h1 {
+        font-size: 25px;
+    }
+
+    .center {
+        max-width: 300px;
+    }
+
+    .game-square {
+        width: 100px;
+        height: 100px;
+        font-size: 90px;
+    }
+
+    .head-box {
+        width: 150px;
+        height: 22px;
+    }
+    h3, p {
+        font-size: 9px;
+    }
+
+    #hard-mode {
+        font-size: 9px;
+    }
+
+    #modal-text {
+        font-size: 65px;
     }
 }
