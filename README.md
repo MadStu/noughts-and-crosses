@@ -2,7 +2,7 @@
 
 This is a fun website for visitors who want to play a game of Noughts and Crosses (also known as Tic-tac-toe or Xs and Os). 
 
-The goal is to provide the user with a trouble free game of Noughts and Crosses that has a couple of difficulty levels and which tracks the score accurately.
+The goal is to provide the user with a trouble free game of Noughts and Crosses that has a few difficulty levels and which tracks the score accurately.
 
 The live link can be found here - https://madstu.github.io/noughts-and-crosses/
 
@@ -17,16 +17,15 @@ It is designed to be responsive and accessible on a range of devices, making it 
 - __Typography__
 
   - For the main heading, scoreboard and the noughts and crosses themselves I chose the "Edo" font from [1001 Fonts](https://www.1001freefonts.com/edo.font).
-  - This font is in a hand drawn, brushed ink looking style which users will appreciate and help them to feel like they're playing it by hand with a friend.
-  - I also styled the hard mode on/off switch with the same Edo font.
+  - This font is in a hand drawn, brushed ink looking style which users will appreciate and help them to feel like they're playing it by hand with a friend.  - I also styled the hard mode toggle switch with the same Edo font.
 
 - __Colour Scheme__
 
-  - I wanted to use black and white colours for the game, as when we played as children it was mostly black ink on white paper, so I have a slightly off-white colour called whitesmoke (#F5F5F5) to represent a piece of paper.
-  - The noughts and crosses on the game are not quite the blackest of black (#202020) but it matches the drawn lines colour and provides a high contrast to represent black ink.
-  - The game lines were created with black again and slightly fuzzy, again to make it feel to the user that it's hand drawn and they're playing with a friend.
-  - The difficulty toggle switch has a background with the same shade of pink that the modal has (#FFC2C7) and is there to stand out and invite the user to change modes.
   - I looked at a lot of background colours and felt the darkslategray (#2F4F4F) colour provided good contrast between the text, the gameboard and the background. And it's also nice and comfortable to look at, not being too bright or too dark.
+  - The difficulty toggle switch has a background with the same shade of pink that the modal has (#FFC2C7) and is there to stand out and invite the user to change modes.
+  - I wanted to use black and white colours for the game, as when we played as children it was mostly black ink on white paper, so I have a slightly off-white colour called whitesmoke (#F5F5F5) to represent a piece of paper.
+  - The game lines were created with black and slightly fuzzy, again to make it feel to the user that it's hand drawn and they're playing with a friend.
+  - The noughts and crosses on the game are not quite the blackest of black (#202020) but it matches the drawn lines colour and provides a high contrast to represent black ink.
   - The text colour is floralwhite (#FFFAF0) which is another off-white colour to just soften the brightness of a hard bright white a little and allows the user to keep playing without it becoming a strain.
   - The background colours do change depending on the outcome of the game. If the game is a draw, the background transitions into black. If the computer wins it turns bright red for a moment. But if the user wins it briefly becomes a kaleidoscope of bright and contrasting colours to celebrate.
 
@@ -35,7 +34,7 @@ It is designed to be responsive and accessible on a range of devices, making it 
 - __The Title Area__
 
   - The title area has a bold title of the website/game name in the Edo font.
-  - This section tells the user how to win the game.
+  - The text below tells the user how to win the game.
 
 ![The Title Area](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/title-area-screenshot.png)
 
@@ -75,7 +74,7 @@ It is designed to be responsive and accessible on a range of devices, making it 
 ### Features Left to Implement
 
 - Add sound effects.
-- Add another difficulty level.
+- ~~Add another difficulty level.~~
 - Take turns with the computer at who goes first.
 - Allow user to choose to play as noughts or crosses.
 
@@ -129,7 +128,7 @@ The live link can be found here - https://madstu.github.io/noughts-and-crosses/
 - The README.md file structure is based on the template provided by the Code Institute.
 - I often used W3Schools and MDN web Docs as a guide for finding the best solutions and using the code in the correct format.
 - I'd also search google which more often than not would show solutions written on stack overflow https://stackoverflow.com/
-- My mentor has also shown a better way to listen for the click events in JS than I'd originally coded, which I've taken and used.
+- My mentor has kindly shown a better way to listen for the click events in JS than I'd originally coded, which I've taken and used.
 
 ### Media
 

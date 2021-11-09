@@ -455,7 +455,7 @@ function modalBox(message){
     //Open the modal 
     modal.style.display = "block";
 
-    //Close the modal after 1 second
+    //Close the modal after 1.5 seconds
     setTimeout(() => {modal.style.display = "none";}, 1500);
 
 
