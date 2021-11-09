@@ -44,6 +44,7 @@ It is designed to be responsive and accessible on a range of devices, making it 
   - On top of the gameboard it displays who's turn it is also whether the hard mode is ON or OFF.
   - The hard mode can be toggled on or off by clicking or tapping the ON/OFF text.
   - The ON/OFF toggle is using the Edo font.
+  - The game will reset if the user toggles the hard mode.
   - The user can click or tap on whatever square they'd like to take their turn.
   - The gameboard will shake to provide feedback to the user when they try to take a turn but the square is already occupied, or if they try to place their nought but it's not their turn.
   - The gameboard will also shake when it's resetting itself.
@@ -63,10 +64,10 @@ It is designed to be responsive and accessible on a range of devices, making it 
 
 - __The Scoreboard and Footer__
 
-  - This section allows the user to see an overview of our annual events and locations.
-  - This section will be updated as more events are held by users.
-  - This section's description also provides a link to the contact form.
-  - The event box borders change colour when the user hovers over them.
+  - This Scoreboard area shows the user their current score, the computer's current score and the number of draws they've had.
+  - The scores update once the game has reached it's conclusion and a winner or draw has been declared.
+  - The scores reset to 0 if the player changes difficulty.
+  - The Footer...
 
 ![The Scoreboard and Footer](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/scoreboard-and-footer-screenshot.png)
 
