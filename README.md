@@ -82,7 +82,7 @@ It is designed to be responsive and accessible on a range of devices, making it 
 
 I tested the website on a number of browsers and devices and all is working as intended.
 
-I also asked a number of my fellow students to test it's functionality and try to break it. Any bugs found are listed in the [Unfixed Bugs](#Unfixed) area
+I also asked a number of my fellow students to test it's functionality and try to break it. Any bugs found are listed in the [Unfixed Bugs](#unfixed-bugs) area
 
 The responsive design allows for different screen sizes as proven by using [Responsinator](http://www.responsinator.com/?url=madstu.github.io%2Fnoughts-and-crosses%2F)
 
