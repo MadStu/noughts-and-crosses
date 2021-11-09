@@ -63,7 +63,9 @@ function checkWinner(OX) {
 
     //Squares with active O or X will be added to player's squares array
     for (let i = 1; i <= 9; i++) {
-        (document.getElementById(`square-${i}`).innerHTML === OX) ? squareArray.push(i) : '' ;
+        if (document.getElementById(`square-${i}`).innerHTML === OX) {
+            squareArray.push(i);
+        }
     }
 
     //Loop through the winning squares to check against player squares
@@ -118,7 +120,11 @@ function checkWinner(OX) {
 function setScoreboard(win, OX) {
     if (win) {
         //Change the score based on who is the active player
-        (OX === "O") ? document.getElementById("human-score").innerHTML++ : document.getElementById("computer-score").innerHTML++ ;
+        if (OX === "O"){
+            document.getElementById("human-score").innerHTML++;
+        } else {
+            document.getElementById("computer-score").innerHTML++;
+        }
     } else {
         //Increments the draw-score if nobody won
         document.getElementById("draw-score").innerHTML++;
@@ -153,7 +159,9 @@ function changePlayer(OX) {
         //Squares with active O or X will not be added to the array
         //Loop through squares from 1-9.
         for (let i = 1; i <= 9; i++) {
-            (document.getElementById(`square-${i}`).innerHTML === '') ? squareArray.push(i) : '' ;
+            if (document.getElementById(`square-${i}`).innerHTML === ''){
+                squareArray.push(i);
+            }
         }
 
         //Check if all squares are full or not
@@ -212,7 +220,12 @@ function computerSquareHard(squareArray){
     let activateTheBeast;
 
     //Do we activate THE BEAST? If not activated we'll continue in hard mode
-    beastMode ? activateTheBeast = activateBeast() : activateTheBeast = 0;
+    if (beastMode){
+        activateTheBeast = activateBeast();
+    } else {
+        activateTheBeast = 0;
+    }
+
     if (activateTheBeast === 0){
 
         //If meets criteria choose hard else computerSquareEasy(squareArray)
@@ -230,7 +243,9 @@ function computerSquareHard(squareArray){
 
             //Squares with active O will be added to player's squares array
             for (let i = 1; i <= 9; i++) {
-                (document.getElementById(`square-${i}`).innerHTML === "O") ? playerArray.push(i) : '' ;
+                if (document.getElementById(`square-${i}`).innerHTML === "O"){
+                    playerArray.push(i);
+                }
             }
 
             //Declare the variable to return
@@ -474,7 +489,9 @@ function activateBeast(){
 
     //Squares with active X will be added to computer's squares array
     for (let i = 1; i <= 9; i++) {
-        (document.getElementById(`square-${i}`).innerHTML === "X") ? computerArray.push(i) : '' ;
+        if (document.getElementById(`square-${i}`).innerHTML === "X"){
+            computerArray.push(i);
+        }
     }
 
     //Declare the variable with default value to return
