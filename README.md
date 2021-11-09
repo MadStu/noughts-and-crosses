@@ -41,6 +41,9 @@ It is designed to be responsive and accessible on a range of devices, making it 
 - __The Gameboard__
 
   - The Gameboard area is where you play the game.
+  - On top of the gameboard it displays who's turn it is also whether the hard mode is ON or OFF.
+  - The hard mode can be toggled on or off by clicking or tapping the ON/OFF text.
+  - The ON/OFF toggle is using the Edo font.
   - The user can click or tap on whatever square they'd like to take their turn.
   - The gameboard will shake to provide feedback to the user when they try to take a turn but the square is already occupied, or if they try to place their nought but it's not their turn.
   - The gameboard will also shake when it's resetting itself.
