@@ -397,17 +397,16 @@ function drawAnimation(){
 function winnerAnimation(){
 
     //Winner! Celebrate with some party colours!
-    const bg = document.body.style.backgroundColor;
     const colours = ["#FE53BB", "#09FBD3", "#F5D300", "#7122FA", "#B76CFD", 
                      "#FF2281", "#011FFD", "#FDC7D7", "#E8E500", "#00FFCA", 
                      "#33135C", "#FF9472", "#35212A", "#FE63B5", "darkslategray"];
     let i = 0;
 
     function change() {
-        //If we have run out of colors, stop the timer
+        //If we have run out of colours, stop the timer
         if(i >= colours.length){ clearInterval(timer); }
         
-        //Set the color and increment the index
+        //Set the colour and increment the index
         document.body.style.backgroundColor = colours[i++];
     }
 

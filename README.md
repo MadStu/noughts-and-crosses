@@ -79,16 +79,14 @@ It is designed to be responsive and accessible on a range of devices, making it 
 
 ### Features Left to Implement
 
-- Add image gallery.
-- Provide further information about events.
+- Add sound effects.
+- Add another difficulty level.
 
 ## Testing 
 
 I tested the website on a number of browsers and devices and all is working as intended.
 
-The responsive design allows for different screen sizes as proven by using [Responsinator](https://www.responsinator.com/?url=https%3A%2F%2Fmadstu.github.io%2FHTMLCSSEPP%2F)
-
-There was a bug where if the screen became too narrow, the header image would repeat itself vertically but adding no-repeat into CSS solved this.
+The responsive design allows for different screen sizes as proven by using [Responsinator](http://www.responsinator.com/?url=madstu.github.io%2Fnoughts-and-crosses%2F)
 
 ### Validator Testing 
 
@@ -125,17 +123,14 @@ The live link can be found here - https://madstu.github.io/noughts-and-crosses/
 
 ### Content 
 
-- The "Stardos Stencil" font was used from Google Fonts https://fonts.google.com/
-- All text content for the website was written by me.
+- The "Edo" font was used from 1001 Free Fonts https://www.1001freefonts.com/edo.font
 - The README.md file structure is based on the template provided by the Code Institute.
 - I often used W3Schools and MDN web Docs as a guide for finding the best solutions and using the code in the correct format.
+- I'd also search google which more often than not would show solutions written on stack overflow https://stackoverflow.com/
 - The Event boxes with the background image CSS was inspired by the code institute's Love Running project and their code was used as the base.
-- I used [Colormind](http://colormind.io/) to generate an initial colour scheme although I tweaked some of the colours for contrasting reasons. 
+- I used [photopea](https://www.photopea.com/) to draw the grid. 
+- I also used [favicon-generator.org](https://www.favicon-generator.org/) to create the favicon. 
 
 ### Media
 
-- All photographic images on the website are owned by me.
-- The social media icons were downloaded from https://iconmonstr.com/
 - The responsive mockup image at the top of the README.md was created at https://websitemockupgenerator.com/
-https://www.photopea.com/
-https://www.1001freefonts.com/edo.font
