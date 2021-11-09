@@ -29,7 +29,7 @@ It is designed to be responsive and accessible on a range of devices, making it 
   - The text colour is floralwhite which is another off-white colour to just soften the brightness of a hard bright white a little and allows the user to keep playing without it becoming a strain.
   - The background colours do change depending on the outcome of the game. If the game is a draw, the background transitions into black. If the computer wins it turns bright red for a moment. But if the user wins it briefly becomes a kaleidoscope of bright and contrasting colours to celebrate.
 
-![Colour Scheme](https://raw.githubusercontent.com/MadStu/HTMLCSSEPP/main/assets/images/readme-images/colour-scheme.png)
+![Colour Scheme](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/colour-scheme.png)
 
 - __Navigation Bar__
 
