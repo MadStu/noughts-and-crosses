@@ -1,3 +1,4 @@
+/* Import the local font */
 @font-face {
     font-family: edo;
     src: url(../fonts/edo.ttf);
@@ -9,6 +10,8 @@ body {
     color: floralwhite;
     transition: background-color 0.1s ease;
 }
+
+/* Headings */
 
 h1 {
     font-size: 50px;
@@ -28,6 +31,8 @@ h3, p {
     max-width: 600px;
 }
 
+/* Head container */
+
 .head-box {
     width: 300px;
     height: 50px;
@@ -39,6 +44,8 @@ h3, p {
     font-family: edo, Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
 }
+
+/* Game container */
 
 #game-container {
     border-radius: 25px;
@@ -62,15 +69,16 @@ h3, p {
     margin: auto;
 }
 
+/* Class to do the shake movements */
+
 .shake-up {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
-  
-    /* When the animation is finished, start again */
-    /* animation-iteration-count: infinite; */
-  }
-  
-  @keyframes shake {
+}
+
+/* The shake movements */
+
+@keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
     20% { transform: translate(-3px, 0px) rotate(1deg); }
@@ -126,6 +134,8 @@ h3, p {
     color: darkslategray;
     font-size: 100px;
 }
+
+/* Links and navigation */
 
 a {
     color: floralwhite;
