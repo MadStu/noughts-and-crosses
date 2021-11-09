@@ -1,8 +1,8 @@
 # Noughts and Crosses
 
-This is a fun website for visitors who want to play a game of Noughts and Crosses (also known as Tic-tac-toe or Xs and Os). 
+This is a fun website for visitors who want to play the fun and addictive game of Noughts and Crosses (also known as Tic-tac-toe or Xs and Os). The website's target audience are people that enjoy quick strategy games. The varying difficulty levels make it suitable for all ages and abilities.
 
-The goal is to provide the user with a trouble free game of Noughts and Crosses that has a few difficulty levels and which tracks the score accurately.
+The key project goal is to provide the user with a trouble free game of Noughts and Crosses that has user controllable difficulty levels and which tracks the score accurately.
 
 The live link can be found here - https://madstu.github.io/noughts-and-crosses/
 
@@ -67,7 +67,7 @@ It is designed to be responsive and accessible on a range of devices, making it 
   - This Scoreboard area shows the user their current score, the computer's current score and the number of draws they've had.
   - The scores update once each game has reached it's conclusion and a winner or draw has been declared.
   - The scores reset to 0 if the player changes difficulty.
-  - The footer provides links to the author's linkedin page and also the project's GitHub page. The links open in new windows.
+  - The footer provides links to the author's linkedin page and also the project's GitHub page. The links open in new tabs.
 
 ![The Scoreboard and Footer](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/scoreboard-and-footer-screenshot.png)
 
@@ -105,9 +105,13 @@ The responsive design allows for different screen sizes as proven by using [Resp
 
 - ~~When the human player has won a game and there's still free spaces available, the computer takes a turn and records itself as having won before resetting the board.~~
 - ~~When the human player has won a game and there's still free spaces available, the computer takes another turn before resetting the board.~~
+  - Fixed the 2 above by moving a function call for the computer to take a turn which was in the wrong place.
 - ~~The computerSquareHard() function does not loop through the eligibleNumsArray.~~
-- ~~The number returned is the square number but is interpreted as the array index number.~~
-- When the user toggles the hard mode very quickly after placing their nought, the computer takes a turn on the freshly reset board.
+  - I changed to a for loop which fixed the problem.
+- ~~The number returned from computerSquareHard() is the square number but is interpreted as the array index number.~~
+  - This led to the computer placing it's X in the wrong square which wasn't intelligent, but an easy fix to return the array value instead of the index.
+- When the user toggles the difficulty level very quickly after placing their nought, the computer takes the first turn on the freshly reset board.
+  - I haven't fixed this yet but I plan to create a global variable whose value is a unique ID for each game, probably based on the Epoch Unix Timestamp and each move is checked against the timestamped game ID. With Each newly reset board comes a new and unique game ID.
 
 ## Deployment
 
