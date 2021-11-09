@@ -458,7 +458,6 @@ function modalBox(message){
     //Close the modal after 1.5 seconds
     setTimeout(() => {modal.style.display = "none";}, 1500);
 
-
     //When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
