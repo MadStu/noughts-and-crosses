@@ -101,7 +101,6 @@ function checkWinner(OX) {
             //Loser message
             modalBox("Loser");
         }
-
         setTimeout(() => {resetSquares();}, 1500);
         
         //Changes global winner variable back to false
@@ -118,11 +117,9 @@ function checkWinner(OX) {
  */
 function setScoreboard(win, OX) {
     if (win) {
-
         //Change the score based on who is the active player
         (OX === "O") ? document.getElementById("human-score").innerHTML++ : document.getElementById("computer-score").innerHTML++ ;
     } else {
-
         //Increments the draw-score if nobody won
         document.getElementById("draw-score").innerHTML++;
     }
@@ -132,16 +129,11 @@ function setScoreboard(win, OX) {
  * Show who's turn it is and check if there's a winner
  */
 function changePlayer(OX) {
-
     if (OX === "O"){
-
         document.getElementById("game-turn").innerHTML = "Computer's";
-        
     } else {
-
         document.getElementById("game-turn").innerHTML = "Your";
     }
-
     //Check if there's a winner
     checkWinner(OX); 
 }
@@ -216,6 +208,7 @@ function resetSquares() {
  */
 function computerSquareHard(squareArray){
 
+    //Declare variable for upcoming beast slaying
     let activateTheBeast;
 
     //Do we activate THE BEAST? If not activated we'll continue in hard mode
@@ -252,58 +245,57 @@ function computerSquareHard(squareArray){
                     let arrStr = eligibleNumsArray[i].toString();
 
                     //Check if there's free squares next to the eligible lines
-                    if (arrStr === "1,2" && document.getElementById("square-3").innerHTML === ""){
+                    if (arrStr === "1,2" && squareFree(3)){
                         cSquare = 3;
-                    } else if (arrStr === "2,3" && document.getElementById("square-1").innerHTML === ""){
+                    } else if (arrStr === "2,3" && squareFree(1)){
                         cSquare = 1;
-                    } else if (arrStr === "1,3" && document.getElementById("square-2").innerHTML === ""){
+                    } else if (arrStr === "1,3" && squareFree(2)){
                         cSquare = 2;
-                    } else if (arrStr === "4,5" && document.getElementById("square-6").innerHTML === ""){
+                    } else if (arrStr === "4,5" && squareFree(6)){
                         cSquare = 6;
-                    } else if (arrStr === "5,6" && document.getElementById("square-4").innerHTML === ""){
+                    } else if (arrStr === "5,6" && squareFree(4)){
                         cSquare = 4;
-                    } else if (arrStr === "4,6" && document.getElementById("square-5").innerHTML === ""){
+                    } else if (arrStr === "4,6" && squareFree(5)){
                         cSquare = 5;
-                    } else if (arrStr === "7,8" && document.getElementById("square-9").innerHTML === ""){
+                    } else if (arrStr === "7,8" && squareFree(9)){
                         cSquare = 9;
-                    } else if (arrStr === "8,9" && document.getElementById("square-7").innerHTML === ""){
+                    } else if (arrStr === "8,9" && squareFree(7)){
                         cSquare = 7;
-                    } else if (arrStr === "7,9" && document.getElementById("square-8").innerHTML === ""){
+                    } else if (arrStr === "7,9" && squareFree(8)){
                         cSquare = 8;
-                    } else if (arrStr === "1,4" && document.getElementById("square-7").innerHTML === ""){
+                    } else if (arrStr === "1,4" && squareFree(7)){
                         cSquare = 7;
-                    } else if (arrStr === "4,7" && document.getElementById("square-1").innerHTML === ""){
+                    } else if (arrStr === "4,7" && squareFree(1)){
                         cSquare = 1;
-                    } else if (arrStr === "1,7" && document.getElementById("square-4").innerHTML === ""){
+                    } else if (arrStr === "1,7" && squareFree(4)){
                         cSquare = 4;
-                    } else if (arrStr === "2,5" && document.getElementById("square-8").innerHTML === ""){
+                    } else if (arrStr === "2,5" && squareFree(8)){
                         cSquare = 8;
-                    } else if (arrStr === "5,8" && document.getElementById("square-2").innerHTML === ""){
+                    } else if (arrStr === "5,8" && squareFree(2)){
                         cSquare = 2;
-                    } else if (arrStr === "2,8" && document.getElementById("square-5").innerHTML === ""){
+                    } else if (arrStr === "2,8" && squareFree(5)){
                         cSquare = 5;
-                    } else if (arrStr === "3,6" && document.getElementById("square-9").innerHTML === ""){
+                    } else if (arrStr === "3,6" && squareFree(9)){
                         cSquare = 9;
-                    } else if (arrStr === "6,9" && document.getElementById("square-3").innerHTML === ""){
+                    } else if (arrStr === "6,9" && squareFree(3)){
                         cSquare = 3;
-                    } else if (arrStr === "3,9" && document.getElementById("square-6").innerHTML === ""){
+                    } else if (arrStr === "3,9" && squareFree(6)){
                         cSquare = 6;
-                    } else if (arrStr === "1,5" && document.getElementById("square-9").innerHTML === ""){
+                    } else if (arrStr === "1,5" && squareFree(9)){
                         cSquare = 9;
-                    } else if (arrStr === "5,9" && document.getElementById("square-1").innerHTML === ""){
+                    } else if (arrStr === "5,9" && squareFree(1)){
                         cSquare = 1;
-                    } else if (arrStr === "1,9" && document.getElementById("square-5").innerHTML === ""){
+                    } else if (arrStr === "1,9" && squareFree(5)){
                         cSquare = 5;
-                    } else if (arrStr === "3,5" && document.getElementById("square-7").innerHTML === ""){
+                    } else if (arrStr === "3,5" && squareFree(7)){
                         cSquare = 7;
-                    } else if (arrStr === "5,7" && document.getElementById("square-3").innerHTML === ""){
+                    } else if (arrStr === "5,7" && squareFree(3)){
                         cSquare = 3;
-                    } else if (arrStr === "3,7" && document.getElementById("square-5").innerHTML === ""){
+                    } else if (arrStr === "3,7" && squareFree(5)){
                         cSquare = 5;
                     }
                 }
             }
-
             //Return the square
             return cSquare;
         } else {
@@ -493,63 +485,60 @@ function activateBeast(){
 
     //Checks if player squares match with elegible squares
         if (eligibleNumsArray[i].every((val) => computerArray.includes(val))) {
-
             let arrStr = eligibleNumsArray[i].toString();
             
             //Check if there's free squares next to the eligible lines
-            if (arrStr === "1,2" && document.getElementById("square-3").innerHTML === ""){
+            if (arrStr === "1,2" && squareFree(3)){
                 cSquare = 3;
-            } else if (arrStr === "2,3" && document.getElementById("square-1").innerHTML === ""){
+            } else if (arrStr === "2,3" && squareFree(1)){
                 cSquare = 1;
-            } else if (arrStr === "1,3" && document.getElementById("square-2").innerHTML === ""){
+            } else if (arrStr === "1,3" && squareFree(2)){
                 cSquare = 2;
-            } else if (arrStr === "4,5" && document.getElementById("square-6").innerHTML === ""){
+            } else if (arrStr === "4,5" && squareFree(6)){
                 cSquare = 6;
-            } else if (arrStr === "5,6" && document.getElementById("square-4").innerHTML === ""){
+            } else if (arrStr === "5,6" && squareFree(4)){
                 cSquare = 4;
-            } else if (arrStr === "4,6" && document.getElementById("square-5").innerHTML === ""){
+            } else if (arrStr === "4,6" && squareFree(5)){
                 cSquare = 5;
-            } else if (arrStr === "7,8" && document.getElementById("square-9").innerHTML === ""){
+            } else if (arrStr === "7,8" && squareFree(9)){
                 cSquare = 9;
-            } else if (arrStr === "8,9" && document.getElementById("square-7").innerHTML === ""){
+            } else if (arrStr === "8,9" && squareFree(7)){
                 cSquare = 7;
-            } else if (arrStr === "7,9" && document.getElementById("square-8").innerHTML === ""){
+            } else if (arrStr === "7,9" && squareFree(8)){
                 cSquare = 8;
-            } else if (arrStr === "1,4" && document.getElementById("square-7").innerHTML === ""){
+            } else if (arrStr === "1,4" && squareFree(7)){
                 cSquare = 7;
-            } else if (arrStr === "4,7" && document.getElementById("square-1").innerHTML === ""){
+            } else if (arrStr === "4,7" && squareFree(1)){
                 cSquare = 1;
-            } else if (arrStr === "1,7" && document.getElementById("square-4").innerHTML === ""){
+            } else if (arrStr === "1,7" && squareFree(4)){
                 cSquare = 4;
-            } else if (arrStr === "2,5" && document.getElementById("square-8").innerHTML === ""){
+            } else if (arrStr === "2,5" && squareFree(8)){
                 cSquare = 8;
-            } else if (arrStr === "5,8" && document.getElementById("square-2").innerHTML === ""){
+            } else if (arrStr === "5,8" && squareFree(2)){
                 cSquare = 2;
-            } else if (arrStr === "2,8" && document.getElementById("square-5").innerHTML === ""){
+            } else if (arrStr === "2,8" && squareFree(5)){
                 cSquare = 5;
-            } else if (arrStr === "3,6" && document.getElementById("square-9").innerHTML === ""){
+            } else if (arrStr === "3,6" && squareFree(9)){
                 cSquare = 9;
-            } else if (arrStr === "6,9" && document.getElementById("square-3").innerHTML === ""){
+            } else if (arrStr === "6,9" && squareFree(3)){
                 cSquare = 3;
-            } else if (arrStr === "3,9" && document.getElementById("square-6").innerHTML === ""){
+            } else if (arrStr === "3,9" && squareFree(6)){
                 cSquare = 6;
-            } else if (arrStr === "1,5" && document.getElementById("square-9").innerHTML === ""){
+            } else if (arrStr === "1,5" && squareFree(9)){
                 cSquare = 9;
-            } else if (arrStr === "5,9" && document.getElementById("square-1").innerHTML === ""){
+            } else if (arrStr === "5,9" && squareFree(1)){
                 cSquare = 1;
-            } else if (arrStr === "1,9" && document.getElementById("square-5").innerHTML === ""){
+            } else if (arrStr === "1,9" && squareFree(5)){
                 cSquare = 5;
-            } else if (arrStr === "3,5" && document.getElementById("square-7").innerHTML === ""){
+            } else if (arrStr === "3,5" && squareFree(7)){
                 cSquare = 7;
-            } else if (arrStr === "5,7" && document.getElementById("square-3").innerHTML === ""){
+            } else if (arrStr === "5,7" && squareFree(3)){
                 cSquare = 3;
-            } else if (arrStr === "3,7" && document.getElementById("square-5").innerHTML === ""){
+            } else if (arrStr === "3,7" && squareFree(5)){
                 cSquare = 5;
             }
-
         }
     }
-
     //Return the square
     return cSquare;
 }
