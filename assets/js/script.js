@@ -480,10 +480,10 @@ function activateBeast(){
     //Declare the variable with default value to return
     let cSquare = 0;
 
-    //Loop through the winning squares to check against player squares
+    //Loop through the winning squares to check against computer's squares
     for (let i = 0; i < eligibleNumsArray.length; i++) {
 
-    //Checks if player squares match with elegible squares
+    //Checks if computer's squares match with elegible squares
         if (eligibleNumsArray[i].every((val) => computerArray.includes(val))) {
             let arrStr = eligibleNumsArray[i].toString();
             
