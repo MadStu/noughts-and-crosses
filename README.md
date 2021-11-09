@@ -123,10 +123,9 @@ The live link can be found here - https://madstu.github.io/noughts-and-crosses/
 - The README.md file structure is based on the template provided by the Code Institute.
 - I often used W3Schools and MDN web Docs as a guide for finding the best solutions and using the code in the correct format.
 - I'd also search google which more often than not would show solutions written on stack overflow https://stackoverflow.com/
-- The Event boxes with the background image CSS was inspired by the code institute's Love Running project and their code was used as the base.
-- I used [photopea](https://www.photopea.com/) to draw the grid. 
-- I also used [favicon-generator.org](https://www.favicon-generator.org/) to create the favicon. 
 
 ### Media
 
 - The responsive mockup image at the top of the README.md was created at https://websitemockupgenerator.com/
+- I used [photopea](https://www.photopea.com/) to draw the grid. 
+- I also used [favicon-generator.org](https://www.favicon-generator.org/) to create the favicon. 
