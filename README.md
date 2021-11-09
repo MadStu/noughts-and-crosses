@@ -123,6 +123,7 @@ The live link can be found here - https://madstu.github.io/noughts-and-crosses/
 - The README.md file structure is based on the template provided by the Code Institute.
 - I often used W3Schools and MDN web Docs as a guide for finding the best solutions and using the code in the correct format.
 - I'd also search google which more often than not would show solutions written on stack overflow https://stackoverflow.com/
+- My mentor has also shown a better way to listen for the click events in JS than I'd originally coded, which I've taken and used.
 
 ### Media
 
