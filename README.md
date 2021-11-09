@@ -23,8 +23,9 @@ It is designed to be responsive and accessible on a range of devices, making it 
 - __Colour Scheme__
 
   - I wanted to use black and white colours for the game, as when we played as children it was mostly black ink on white paper, so I have a slightly off-white colour called whitesmoke (#F5F5F5) to represent a piece of paper.
-  - The noughts and crosses on the game are black (#000000) to provide high contrast represent the black ink.
+  - The noughts and crosses on the game are not quite the blackest of black (#202020) but it matches the drawn lines colour and provides a high contrast to represent black ink.
   - The game lines were created with black again and slightly fuzzy, again to make it feel to the user that it's hand drawn and they're playing with a friend.
+  - The difficulty toggle switch has a background with the same shade of pink that the modal has (#FFC2C7) and is there to stand out and invite the user to change modes.
   - I looked at a lot of background colours and felt the darkslategray (#2F4F4F) colour provided good contrast between the text, the gameboard and the background. And it's also nice and comfortable to look at, not being too bright or too dark.
   - The text colour is floralwhite (#FFFAF0) which is another off-white colour to just soften the brightness of a hard bright white a little and allows the user to keep playing without it becoming a strain.
   - The background colours do change depending on the outcome of the game. If the game is a draw, the background transitions into black. If the computer wins it turns bright red for a moment. But if the user wins it briefly becomes a kaleidoscope of bright and contrasting colours to celebrate.
