@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 //Set global variable winner to a default falsey state
 let winner = false;
 
@@ -99,7 +101,7 @@ function checkWinner(OX) {
             modalBox("Loser");
         }
 
-        setTimeout(() => {resetSquares()}, 1500);
+        setTimeout(() => {resetSquares();}, 1500);
         
         //Changes global winner variable back to false
         winner = false;
@@ -165,7 +167,7 @@ function changePlayer(OX) {
         if (squareArray.length < 1 && !winner) {
 
             //If no winner, reset game and increment draw-score
-            setTimeout(() => {resetSquares()}, 1000);
+            setTimeout(() => {resetSquares();}, 1000);
             setScoreboard(false);
 
             //Show draw colour
@@ -180,7 +182,7 @@ function changePlayer(OX) {
             let chosenSquare = (hardMode) ? computerSquareHard(squareArray) : computerSquareEasy(squareArray);
 
             //Wait 0.75 seconds then add X to the square
-            setTimeout(() => {setSquare(chosenSquare, "X")}, 750);
+            setTimeout(() => {setSquare(chosenSquare, "X");}, 750);
         }
 
     } else {
@@ -370,7 +372,7 @@ window.addEventListener('load', function () {
 function shakey(){
     let shake = document.getElementById("game-container");
     shake.classList.add("shake-up");
-    setTimeout(() => {shake.classList.remove("shake-up")}, 600);
+    setTimeout(() => {shake.classList.remove("shake-up");}, 600);
 }
 
 /**
@@ -429,18 +431,18 @@ function modalBox(message){
     modal.style.display = "block";
 
     //Close the modal after 1 second
-    setTimeout(() => {modal.style.display = "none"}, 1500);
+    setTimeout(() => {modal.style.display = "none";}, 1500);
 
 
     //When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
-    }
+    };
 
     //When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    }
+    };
 }

@@ -95,7 +95,7 @@ The responsive design allows for different screen sizes as proven by using [Resp
 - Accessibility
   - I confirmed that the colours and fonts chosen are easy to read and accesible by running it through lighthouse in devtools.
 
-![Lighthouse Score](https://raw.githubusercontent.com/MadStu/HTMLCSSEPP/main/assets/images/readme-images/lighthouse-score.png)
+![Lighthouse Score](https://raw.githubusercontent.com/MadStu/noughts-and-crosses/main/assets/images/readme-images/lighthouse-score.png)
 
 ### Unfixed Bugs
 
@@ -103,6 +103,7 @@ The responsive design allows for different screen sizes as proven by using [Resp
 - ~~When the human player has won a game and there's still free spaces available, the computer takes another turn before resetting the board.~~
 - ~~The computerSquareHard() function does not loop through the eligibleNumsArray.~~
 - ~~The number returned is the square number but is interpreted as the array index number.~~
+- When the user toggles the hard mode very quickly after placing their nought, the computer takes a turn on the reset board.
 
 ## Deployment
 
