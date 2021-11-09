@@ -44,14 +44,13 @@ h3, p {
     text-align: center;
 }
 
+/* Hard-mode switch */
+
 .hard-box-right {
     width: 40px;
 }
 
 #hard-switch {
-
-
-
     width: 120px;
     height: 25px;
     border-radius: 15px;

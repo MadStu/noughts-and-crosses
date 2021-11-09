@@ -330,7 +330,7 @@ function resetScores(){
 window.addEventListener('load', function () {
 
     //Define modeSwitch and listen for click event
-    let modeSwitch = this.document.querySelectorAll('#hard-mode');
+    let modeSwitch = this.document.querySelectorAll('#hard-switch');
     modeSwitch.forEach(function(clicked) {
 
         //Add the event listener
